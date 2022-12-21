@@ -1,0 +1,75 @@
+/* 언어설정 */
+@charset 'UTF-8';
+/* 전체설정 */
+*{margin: 0; padding:0;}
+ul { list-style: none;}
+a {text-decoration: none; color: #000;}
+img {border: none; vertical-align: bottom;}
+
+
+/* 1600px이상 구간 */
+/* 레이아웃 설정 */
+header {
+    position: fixed;
+    background-color:beige;
+    width: 15%;
+    height: 100%;
+    }
+nav {
+    width: 85%;
+    height: 35px;
+    background-color: #000;
+    margin-left: 15%;
+    }
+section {
+    width: 85%;
+    height: auto;
+    background-color: rgb(164, 229, 151);
+    margin-left: 15%;
+    }
+article {height: 260px; float: left; width: 20%;}
+
+article:nth-child(1){background-color: #ddd; height: 520px; width: 60%;}
+article:nth-child(2){background-color: #ccc; width: 40%;}
+article:nth-child(3){background-color: #bbb;}
+article:nth-child(4){background-color: #aaa;}
+article:nth-child(5){background-color: #999;}
+article:nth-child(6){background-color: #888; width: 40%;}
+article:nth-child(7){background-color: #777;}
+article:nth-child(8){background-color: #666;}
+article:nth-child(9){background-color: #555; width: 40%;}
+article:nth-child(10){background-color: #444;}
+article:nth-child(11){background-color: #333;}
+article:nth-child(12){background-color: #222;}
+
+
+
+
+/* 미디어쿼리구간설정 */
+
+/* 1280px이상 1599px이하 구간 */
+@media(min-width:1280px) and (max-width:1599px) {
+
+}
+/* 1024px이상 1279px이하 구간 */
+@media(min-width:1024px) and (max-width:1279px) {
+
+}
+/* 780px이상 1023px이하 구간 */
+@media(min-width:780px) and (max-width:1023px) {
+
+}
+/* 640px이상 779px이하 구간 */
+@media(min-width:640px) and (max-width:779px) {
+
+}
+/* 480px이상 639px이하 구간 */
+@media(min-width:480px) and (max-width:639px) {
+
+}
+    
+
+/* 479px이하 구간 */
+@media(max-width:479px){
+
+}

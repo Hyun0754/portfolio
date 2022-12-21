@@ -1,0 +1,315 @@
+/* 언어설정 */
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+/* 전체설정 */
+
+*{margin: 0; padding: 0;}
+ul {list-style: none;}
+a {color: black;
+    text-decoration: none;}
+
+/* 기본css */
+/* 로고설정 */
+body {font-family: 'Single Day', cursive;}
+.logo {
+    font-size: 100px;
+    font-weight: normal;
+    font-family: 'Single Day', cursive;}
+.logo a {
+    color: rgb(27, 73, 223);
+    text-decoration: none;}
+
+/* 메뉴설정 */
+.box2 {background-color: #7cbac1;}
+.gnb>ul{
+    display: flex;}
+.gnb>ul>li {width: auto;}
+.gnb>ul>li>a {
+    display: block;
+    padding: 15px;
+    font-size: 14px;}
+
+/* 기사설정 */
+.story {}
+.story h2 {font-size: 36px;
+            margin-top: 0;
+            margin-bottom: 20px;}
+.story time {}
+
+.story p {margin-top: 10px;
+            margin-bottom: 20px;}
+.story h3 {margin-top: 40px;
+            border-left: solid 10px #7cbac1;
+            padding-left: 10px;
+            font-weight: normal;
+            font-size: 24px;}
+.story img {width: 100%;
+            height: auto;}
+
+/* 사이드메뉴 */
+.sidemenu {margin-bottom: 30px;}
+.sidemenu h3 {
+            margin-top: 0; margin-bottom: 10px;
+            border-bottom: dotted 2px #ddd;
+            font-size: 18px;
+            color: #666;}
+.sidemenu ul {}
+.sidemenu li {}
+.sidemenu li a {
+            display: block;
+            padding: 5px;
+            font-size: 14px;}
+.sidemenu li a i {
+            color: #888;
+            margin-right: 5px;
+            font-size: 16px;}      
+
+/* 추천기사 */
+.recommend {margin-bottom: 30px;}
+.recommend h3 {
+            margin-top: 0; margin-bottom: 10px;
+            border-bottom: dotted 2px #ddd;
+            font-size: 18px;
+            color: #666;}
+.recommend ul {}
+.recommend li {}
+.recommend li a {
+            display: block;
+            padding: 0px;
+            font-size: 14px;
+            position: relative;
+            }
+.recommend li a img {
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;
+            }
+.recommend .text {
+            position:absolute;
+            bottom: 0; left: 0;
+            background-color:rgba(0,125,255,0.5);
+            color: #fff;
+            width: 100%;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;}
+
+/* 인기기사 */
+.popular {}
+.popular h3 {
+            margin-top: 0; margin-bottom: 10px;
+            border-bottom: dotted 2px #ddd;
+            font-size: 18px;
+            color: #666;
+            }
+.popular ul {}
+.popular li {padding-bottom: 5px;}
+.popular li a {
+            display: block;
+            padding: 10px;
+            font-size: 14px;
+            color: #2288bb;
+            border-bottom: 1px dotted #333;}
+.popular li a::after{content: ""; clear: both; display: block;}
+.popular img {
+            float: left;
+            width: 60px;
+            }
+.popular .text {
+    float: none;
+    width: auto;
+    margin-left: 70px;
+    }
+.popular span {
+    display: block;
+    font-size: 12px;
+    color: #444;
+    }
+/* sns설정 */
+.sns {margin-top: 40px;}
+.sns ul {display: flex;}
+.sns ul li {flex: 1;}
+.sns ul li a {
+    display: block;
+    text-align: center;
+    background-color: #444;
+    font-size: 15px;
+    padding: 20px 0;}
+.sns ul li:nth-child(1) a {background-color: #1da1f2;}
+.sns ul li:nth-child(2) a {background-color: #1877f2;}
+.sns ul li:nth-child(3) a {/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#833ab4+1,e1306c+25,ffdc80+50,ffdc80+50,f56040+73,5851db+97 */
+        background: #833ab4; /* Old browsers */
+        background: -moz-linear-gradient(45deg,  #833ab4 1%, #e1306c 25%, #ffdc80 20%, #ffdc80 50%, #f56040 73%, #5851db 97%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg,  #833ab4 1%,#e1306c 25%,#ffdc80 50%,#f56040 73%,#5851db 97%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg,  #833ab4 1%,#e1306c 25%,#ffdc80 50%,#ffdc80 50%,#f56040 73%,#5851db 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#833ab4', endColorstr='#5851db',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        ;}
+
+/* 관련기사 설정 */
+.rela {
+    background-color: #888;
+    margin-top: 40px;
+    padding: 20px;}
+.rela h3 {
+    font-size: 25px;
+    color: #fff;
+    padding-bottom: 20px 5px;    
+    font-style: normal;}
+/* .rela ul::after {content: ""; clear: both; display: block;} */    
+.rela li a {display: block;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;}
+.rela img {width: 100%;}
+.rela .text {font-size: 20px;
+    color: #FFF;}
+
+
+/* 푸터설정 */
+
+.box5 {border-top: solid 1px #333;}
+.copyright {color: #666;
+            font-size: 14px;
+            }
+
+
+
+
+
+
+
+/* 박스간격설정 */
+/* 위,아래간격 */
+
+/* 마진으로간격설정
+.box1 {margin-top: 8px; margin-bottom: 8px;}
+.box3 {margin-top: 40px; margin-bottom: 30px;}
+.box4 {margin-top: 40px; margin-bottom: 30px;}
+.box5 {margin-top: 15px; margin-bottom: 15px;} */
+
+/* 패딩으로간격설정 */
+.box1 {padding-top: 8px; padding-bottom: 8px;}
+.box3 {padding-top: 40px; padding-bottom: 30px;}
+.box4 {padding-top: 40px; padding-bottom: 30px;}
+.box5 {padding-top: 15px; padding-bottom: 15px;}
+
+/* 좌우간격설정 */
+.box1, .box2, .boxA, .box5 {padding-left: 5px; padding-right: 5px;}
+
+
+
+
+
+
+
+
+/* 미디어쿼리구간 ------------------------------------------------------------*/
+
+/* 모바일구간 1 */
+    /* 599px이하일때 */
+@media (max-width:599px){
+.sns span {display: inline-block;
+        text-indent: -9999px;}
+
+.gnb>ul>li>a {
+        display: block;
+        padding: 10px;
+        font-size: 12px;}
+
+.rela ul li {
+            flex-direction: column;
+}
+/* 영역설정!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 헤더영역 */
+.box1 {order: 1;}
+
+/* 슬라이더영역 */
+.box2 {order: 2;}
+
+/* 갤러리영역 */
+.box3 {order: 3;}
+
+/* 인기검색어영역 */
+.sns {order: 4;}
+
+/* 최신글영역 */
+.rela {order: 5;}
+
+/* 인기글영역 */
+.box4-1 {order: 6;}
+
+/* 배너섹션 */
+.recommend {order: 7;}
+
+/* sns섹션 */
+.box4-2 {order: 8;}
+.sns ul li a {
+    display: block;
+    text-align: center;
+    background-color: #444;
+    font-size: 15px;
+    padding: 50px 0;}
+
+/* 푸터영역 */
+.box5 {order: 9;}
+}
+/* 모바일구간 2 */
+        /* 600px이상 767px이하일때 */
+@media (min-width:600px) and (max-width:767px){
+.box4 {display: flex;
+        justify-content: space-between;}
+.box4-1 {display: flex;
+        flex-direction: column;
+        width: 48%;}
+.box4-2 {display:block;
+        width: 48%;}
+.rela ul {display: flex;}
+.rela li {width: 33.3333%;} 
+}
+/* 태블릿구간 */
+    /* 768px 이상일때--------------------------- */
+@media (min-width:768px){
+    /* 박스 3과 4의 가로정렬 */
+    .box3 {
+        width: 70%;
+        float: left;}
+    .box4 {
+        width: 30%;
+        float: left;}
+    .boxA::after {
+        content: "";
+        clear: both;
+        display: block;}
+
+/* 박스3과 박스 4의 좌우간격 설정 */
+    .box3 {padding-right: 50px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;}
+    .rela ul {display: flex;}
+    .rela li {width: 33.3333%;} 
+
+    .gnb>ul>li>a {
+        display: block;
+        padding: 5px;
+        font-size: 12px;}
+    }
+    .sns ul li a {
+        display: block;
+        text-align: center;
+        background-color: #444;
+        font-size: 15px;
+        padding: 10px 0;}
+/* 웹구간 */
+    /* 1280px 이상일때 ---------------------------*/
+    @media (min-width:1280px){
+        .box1,.boxA,.gnb, .copyright {
+            width: 1190px;
+            margin: 0 auto;
+            }
+    .rela ul {display: flex;}
+    .rela li {width: 33.3333%;} 
+    }
+

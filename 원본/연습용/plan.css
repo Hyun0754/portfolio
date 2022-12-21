@@ -1,0 +1,27 @@
+/* 언어설정 */
+@charset 'UTF-8';
+
+#wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    }
+.header {
+    display: flex;
+    background-color: antiquewhite;
+    width: 100%;
+    position: relative;
+    justify-content: end;}
+.header>h1{
+    position: absolute;
+    background-color: aqua;
+    width: 20%;
+    height: 100px;
+    top: 0; left: 0;}
+.header>.menu {
+    background-color: blue;
+    width: 80%;
+    height: 100px;
+    }

@@ -1,0 +1,211 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Play&display=swap');
+
+
+/* 전체설정 */  
+*{margin: 0; padding: 0;}
+ul{ list-style: none;}
+img{border: none; vertical-align: bottom;}
+a {color: #fff; text-decoration: none;}
+
+/* 기본설정 */
+body {
+    background-color: #111;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;}
+
+/* font-family: 'Monoton', cursive;
+    font-family: 'Play', sans-serif; */
+
+/* 배경화면 설정 */
+.vid {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;}
+.vid video {
+    width: 100%;
+    min-width:1600px;}
+
+/* 헤더설정 */
+.logo {
+    position: fixed;
+    top: 40px; left: 40px;
+    z-index: 100;
+    }
+.logo img {
+    width: 280px;
+    height: auto;
+    }
+
+header {
+    position: fixed;
+    top: 0; left: -420px;
+    width: 700px;
+    height: 100%;
+    background:linear-gradient(-45deg, #e6fc55, #b9fb05 ,#97e031);
+    transform: skewX(-40deg);}
+#gnb {
+    position: absolute;
+    right: 0px;
+    top: 150px;
+    }
+#gnb>li {
+    position: relative;}
+#gnb>li>a {
+    display: block;
+    text-align: right;
+    padding-right: 40px;
+    width: 220px;
+    height: 50px;
+    box-sizing: border-box;
+    /* font-family: 'Play', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 3; */
+    font: bold 18px/3 play;
+    color: #000;}
+#gnb em{
+    display: inline-block;
+    transform: skewX(40deg) !important;
+    }
+#gnb>li:hover>a {
+    background-color: #111;
+    color: #fff;}
+
+/* 2뎁스메뉴 */
+#gnb ul {
+    position: absolute;
+    top: 0; left: 0px;
+    transition: all 0.4s;
+    opacity: 0;
+    }
+#gnb ul a {
+    display: block;
+    width: 150px;
+    height: 40px;
+    font: bold 16px/2.5 arial;
+    padding-left: 50px;
+    box-sizing: border-box;
+    background-color: #222;
+    color: #fff;
+    margin-bottom: 3px;
+    border-bottom: solid 1px #b9fb05;
+    }
+#gnb>li:hover ul{
+    left: 205px;
+    opacity: 1;
+    }
+/* 자바스크립트의 경우 건바이건으로 지정해서 불러줘야 하지만
+CSS의 경우 부모는 무조건 자손만 불러낼수 있으므로 한번으로 여러개의 설정을 가능하게 하는 장점이 있다. */
+/* 텍스트박스 설정 */
+.txtBox {
+    position: fixed;
+    right: 70px;
+    width: 340px;
+    height: 250px;
+    top: 50%;
+    margin-top: -180px;
+    }
+.txt {
+    font-size: 34px;
+    font-family: play;
+    color: #bbb;
+    letter-spacing:-2px;
+    position: absolute;
+    bottom: 0; right: 0;}
+.txt b {
+    margin-left: 20px;
+    color: #b9fb05;
+    font-weight: bold;
+    font-family: arial;
+    }
+.big {
+    font-size: 160px;
+    font-family: 'Monoton', cursive;
+    color: #b9fb05;
+    letter-spacing: -1px;}
+.big em{
+    color: #fff;
+    font-family: play;
+    font-size: 50px;}
+/* 사이드 설정 */
+.side{
+    position: fixed;
+    right: -800px; /*설정후 변경-800px*/
+    bottom: 0;
+    background-color: #111;
+    width: 800px;
+    height: 100%;
+    transform: skewX(-40deg);
+    opacity: 0.5;
+    transition: all 0.5s;}
+.side div {
+    background-color: #000;
+    width: 400px;
+    height: 100%;
+    position: absolute;
+    left: 150px;
+    background-origin: 0;
+    bottom: 0;
+    transition: all 1s;
+    }
+.side p {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    transition: all 0.8s;
+    }
+.side p:nth-child(1) {bottom: 270px; left: 50px; transform: translate(400px);}
+.side p:nth-child(2) {bottom: 160px; left: 50px; transform: translate(300px);}
+.side p:nth-child(3) {bottom: 50px; left: 50px; transform: translate(200px);}
+.side em {
+    color: #a0dd50;
+    display: block;
+    transform: skewX(40deg);
+    }
+.side img {}
+
+/* 아이콘 설정 */
+.side article {
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    transform: skewX(40deg);
+    width: 150px;
+    height: 50px;}
+.side i {
+    color: #b9fb05;
+    font-size: 60px;
+    position: absolute;
+    bottom: 0; right: 0;
+    animation: ani 1.5s infinite;}
+.side i:nth-child(1) {animation-delay: 0s;}
+.side i:nth-child(2) {animation-delay: 0.5s;}
+.side i:nth-child(3) {animation-delay: 1s;}
+/* 애니메이션 만들기 */
+@keyframes ani {
+    0% {
+        right:0;
+        transform:scale(1);
+        opacity: 1;}
+    100% {
+        right:100px;
+        transform:scale(1.5);
+        opacity: 0;}
+        }
+
+
+/* 호버설정 */
+.side:hover {right: -500px;}
+.side:hover div {
+    left: 50px;
+    }
+.side:hover p {
+    transform: translateX(0);
+    }
+.side:hover article {
+    left: -9999px;
+}

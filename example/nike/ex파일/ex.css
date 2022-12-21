@@ -1,0 +1,228 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Play&display=swap');
+/* 전체설정 */
+*{margin: 0; padding: 0;}
+ul {list-style: none;}
+a {text-decoration: none; color:#fff;}
+img {vertical-align: bottom; border: none;}
+
+
+/* font-family: 'Monoton', cursive;
+    font-family: 'Play', sans-serif; */
+
+/* 기본설정 */
+body {
+    position: fixed;
+    background-color: #111;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    }
+
+.vid{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    }
+.vid video {
+    width: 100%;
+    min-width: 1600px;
+    }
+
+/* 로고설정 */
+.logo {
+    position: fixed;
+    top: 40px; left: 40px;
+    z-index: 10;
+    }
+
+.logo img {
+    width: 280px;
+    height: auto;
+    transform: rotate(0deg);
+    transform-origin: center;
+    transition: all 0.5s;
+    }
+    
+
+/* 헤더설정 */
+header {
+    background:linear-gradient(0deg, rgb(73, 185, 230), rgb(118, 210, 223), rgb(237, 241, 243)) ;
+    position: fixed;
+    width: 700px;
+    height: 100%;
+    transform: skewX(-30deg);
+    top: 0; left: -400px;
+    opacity: 1;
+    transition: all 0.5s;
+    }
+header:hover{
+    left: 150px;
+    width: 500px;
+    height: 100%;
+    }
+header:hover img {
+    width:280px;
+    transform: rotate(360deg);
+    }
+#gnb {
+    position: absolute;
+    right: 0;
+    top: 150px;
+    }
+#gnb>li {position: relative;}
+#gnb>li:hover>a {
+    background-color: #000;
+    color: #fff;}
+#gnb>li:hover ul {
+    left: 205px;
+    opacity: 1;
+    }
+#gnb>li>a {
+    display: block;
+    color: #000;
+    font:bold 18px/3 play;
+    text-align: right;
+    padding-right: 40px;
+    width: 220px;
+    height: 50px;
+    box-sizing: border-box;
+    }
+#gnb em {
+    display: inline-block;
+    transform: skewX(30deg);
+    }
+
+/* 2뎁스메뉴 */
+#gnb ul {
+    position: absolute;
+    top: 0 ; left: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    }
+#gnb ul a{
+    font: bold 16px/2.5 play;
+    color: #fff;
+    background-color: #222;
+    display: block;
+    width: 150px;
+    height: 40px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    margin-bottom: 3px;
+    border-bottom: #b9fb05 1px solid;   
+    }
+
+.txtBox {
+    position: fixed;
+    right: 0;
+    width: 340px;
+    height: 250px;
+    right: 70px;
+    bottom: 50%;
+    /* margin-top: ; */
+    }
+.txt {
+    font-size: 34px;
+    color: #bbb;
+    font-family: play;
+    position: absolute;
+    bottom: 0;left: 0;
+    letter-spacing: -3px;
+    }
+.txt b {
+    color: rgb(73, 185, 230);
+    margin-left: 20px;
+    font-family: arial;
+    }
+
+.big {
+    font-size: 160px;
+    font-family: monoton;
+    color: rgb(73, 185, 230);
+    letter-spacing: -1px;
+    }
+.big em {
+    font-size: 50px;
+    color: #fff;
+    font-family: play;
+    }
+/* 사이드 설정 */
+.side {
+    position: fixed;
+    right: -800px;
+    bottom: 0;
+    width: 800px;
+    height: 100%;
+    background-color: #222;
+    transform: skewX(-40deg);
+    opacity: 0.5;
+    transition: 0.5s;
+    }
+.side div {
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    background-color: #666;
+    left: 150px;
+    bottom: 0;
+    transition: all 1s;
+    }
+    
+    
+.side p {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    color: #b9fb05;
+    transition: all 1s;
+    }
+.side em {
+    transform:skewX(40deg);
+    display: block;}
+
+.side p:nth-child(1) {bottom: 270px; left: 500px;}
+.side p:nth-child(2) {bottom: 160px; left: 300px;}
+.side p:nth-child(3) {bottom: 50px; left: 100px;} 
+.side img {}
+
+/* 호버설정 */
+.side:hover {
+    right: -500px;
+    }
+.side:hover div {
+    left: 50px;
+    }
+.side:hover p {
+    left: 50px;
+    }
+article {
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    width: 150px;
+    height: 50px;
+    transform: skewX(40deg);
+    }
+.side i {
+    color: rgb(73, 185, 230);
+    font-size: 60px;
+    position: absolute;
+    bottom: 0; right: 0;
+    }
+.side i:nth-child(1) {animation-delay: 0s;animation: ani 2.5s infinite;}
+.side i:nth-child(2) {animation-delay: 0.5s;animation: ani 2s infinite;}
+.side i:nth-child(3) {animation-delay: 1s;animation: ani 1s infinite;}
+@keyframes ani {
+    0% {
+        right: 0;
+        transform:scale(1);
+        opacity: 1; 
+        }
+    100% {
+        right: 100px;
+        transform:scale(1.5);
+        opacity: 0.2; 
+        }
+}

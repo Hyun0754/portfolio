@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <title>HTML학습서_DOit!</title>
+    
+        <!-- 폰트어썸연결 -->
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <script src="https://use.fontawesome.com/29f84cf8f7.js"></script> 
+        <!-- 외부스타일시트 -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/sub01.css">
+        <!-- 자바스크립트 -->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <!-- 자바스크립트동적구현 -->
+        <script>
+            // 메뉴버튼을 클릭했을때,gnb를 보이게 해라
+            $(document).ready(function(){
+                $('.menu_toggle_btn').click(function(){
+                    $('.gnb').slideToggle()
+                })
+            })
+        </script>
+    
+    </head>
+    <body class="sub_html">
+        <div id="wrap">
+            <header class="header" >
+                <section class="info_section">
+                    <ul class="info_list">
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                    </ul>
+                </section>
+                <h1 class="logo"><a href="index.html">HTML<br>학습서</a></h1>
+                <nav class="nav">
+                    <ul class="gnb">
+                        <li><a href="#">HOME</a><span class="sub_menu_toggle_btn">하위메뉴토글버튼</span></li>
+                        <li><a href="#">HTML</a><span class="sub_menu_toggle_btn">하위메뉴토글버튼</span></li>
+                        <li><a href="#">CSS</a><span class="sub_menu_toggle_btn">하위메뉴토글버튼</span></li>
+                        <li><a href="#">JAVASCRIPT</a><span class="sub_menu_toggle_btn">하위메뉴토글버튼</span></li>
+                    </ul>
+                </nav>
+                <span class="menu_toggle_btn"> 전체 메뉴 토글버튼</span>
+            </header>
+        <section class="content_section01">
+            <div>
+                <p>html이란? Hyper text markup language 로 웹페이지를 읽을 수 있게 만들어주는 언어이다.</p>
+                <ul>
+                    <li><a href="글자태그001.html"><img src="http://picsum.photos/200/100"><span>제목태그와글자태그</span></a></li>
+                    <li><a href="글자태그002.html"><img src="http://picsum.photos/200/100"><span>텍스트태그</span></a></li>
+                    <li><a href="공간태그001.html"><img src="http://picsum.photos/200/100"><span>div태그/span태그</span></a></li>
+                    <li><a href="이미지와링크태그.html"><img src="http://picsum.photos/200/100"><span>a태그/img태그</span></a></li>
+                    <li><a href="목록태그001.html"><img src="http://picsum.photos/200/100"><span>ol/ul태그</span></a></li>
+                    <li><a href="테이블태그001.html"><img src="http://picsum.photos/200/100"><span>table태그</span></a></li>
+                <!-- 추후내용이 추가될때마다 삽입 -->
+                    <li><a href="시맨틱태그001.html"><img src="http://picsum.photos/200/100"><span>시맨틱태그의 종류</span></a></li>
+                    <li><a href="입력양식태그001.html"><img src="http://picsum.photos/200/100"><span>form태그</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content_ex">
+        <div>
+                <p>학습을 하면서 예제를 만들었던 파일모음</p>
+            <ul>
+                <li><a href="ex_song.html" target="_blank"><img src="http://picsum.photos/300/400"><div class="text">동요모음</div></a></li>
+                <li><a href="ex_form001.html" target="_blank"><img src="http://picsum.photos/300/400"><div class="text">수강신청</div></a></li>
+                <li><a href="ex_form002.html" target="_blank"><img src="http://picsum.photos/300/400"><div class="text">상품주문서</div></a></li>
+                <li><a href="ex_star.html" target="_blank"><img src="http://picsum.photos/300/400"><div class="text">별헤는밤</div></a></li>
+            </ul>
+        </div>
+        </section>
+
+
+
+            <footer class="footer">
+                <p>Copyright ⓒ 2022. YUNIYUNI All rights reserved.</p>
+            </footer>
+    
+    
+        </div>
+    
+</body>
+</html>

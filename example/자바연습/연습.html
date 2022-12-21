@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습장</title>
+</head>
+<body>
+
+    <script>
+    const rawInput = prompt('태어난 해를 입력해주세요.', '')
+    const year = Number(rawInput)
+    const e = year % 12
+
+    let result
+    if (e === 0) { result = '원숭이'}
+    if (e === 1) { result = '닭'}
+    if (e === 2) { result = '개'}
+    if (e === 3) { result = '돼지'}
+    if (e === 4) { result = '쥐'}
+    if (e === 5) { result = '소'}
+    if (e === 6) { result = '호랑이'}
+    if (e === 7) { result = '토끼'}
+    if (e === 8) { result = '용'}
+    if (e === 9) { result = '뱀'}
+    if (e === 10) { result = '말'}
+    if (e === 11) { result = '양'}
+    alert(`${year}년에 태어났다면 ${result} 띠입니다.`)
+
+
+
+    // const rawInput = prompt('태어난 해를 입력해주세요.', '')
+    // const year = Number(rawInput)
+    // const tti = '원숭이,닭,개,돼지,쥐,소,호랑이,토끼,용,뱀,말,양' .split(',')
+
+    // alert(`${year}년에 태어났다면 ${tti[year % 12]} 띠입니다.`)
+
+
+
+
+    </script>
+
+
+    
+    
+</body>
+</html>
