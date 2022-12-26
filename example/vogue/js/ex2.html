@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습하기</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<style>
+    a{text-decoration: none;}
+    ul{list-style: none;}
+
+    #wrap {
+        background-color: #444;
+        width: 80%;
+        height: 800px;
+    }
+    #wrap ul {
+        display: flex;
+        width: 80%;
+        justify-content: center;}
+    #wrap li {
+        width: 200px; height: 150px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-sizing: border-box;
+        }
+    #wrap li:nth-child(1){background-image: url(img/a1.png);}
+    #wrap li:nth-child(2){background-image: url(img/a2.jfif);}
+    #wrap li:nth-child(3){background-image: url(img/a3.png); background-color: #fff;}
+    #wrap li:nth-child(4){background-image: url(img/a1.png);}
+    #wrap li:nth-child(5){background-image: url(img/a1.png);}
+    #wrap li:hover {
+        transform: scale(1.4);
+        }
+
+    #wrap  .box{
+        position: relative;
+        width: 100%;
+        }
+    .aa p {
+        position: absolute;
+        font-size: 40px;
+        color: #fff;
+        display: none;
+        text-align: left;
+        animation: ani 1.5s;
+        transform: translateX(50px);}
+    .aa p:nth-child(1) {animation-delay: 0s;}
+    .aa p:nth-child(2) {animation-delay: 0.5s;}
+    .aa p:nth-child(3) {animation-delay: 1s;}
+   
+@keyframes ani {
+    0%{transform: translateX(0px);
+        opacity: 0;}
+    100%{transform: translateX(50px);
+        opacity: 1;}
+    }
+    
+</style>
+
+
+<body>
+    <div id="wrap">
+        <ul id="img">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="box">
+            <div class="aa">
+                <p>I gotta, I gotta, I gotta make my</p>
+                <p>mind up I'm gon' grind,</p>
+                <p>gon' shine until m</p>
+            </div>
+
+            <div>
+                <p>mind up I'm gon' grind,</p>
+                <p>gon' shine until m</p>
+            </div>  
+
+            <div>
+                <p>time's up I got mo</p>
+                <p>ney on my mind,</p>
+            </div>
+
+            <div>
+                <p>gon' shine until m</p>
+                <p>time's up I got mo</p>
+            </div>
+
+            <div>
+                <p>I gotta, I gotta, I gotta make my</p>
+                <p>gon' shine until m</p>
+                <p>I gotta, I gotta, I gotta make my</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#img li').click(function(){
+                let a=$(this).index();
+                $('.aa p').css({'display':'none'})
+                $('.aa p').eq(a).css({'display':'block'})
+            })
+
+
+        })
+
+    </script>
+
+
+
+
+</body>
+</html>
