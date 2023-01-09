@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+
+ <title>슬라이드
+ </title>
+
+<head>
+
+
+<style>
+ * { margin:0; padding:0 }
+ ul {overflow: hidden;}
+
+
+ #wrap1 ul { width:280px; height:390px; 
+  position:relative;  margin:0 auto; 
+  list-style:none;
+  border: 5px solid #000;
+  }
+ #wrap1 ul li { width:200px; 
+  height:250px; position:absolute; top:100%;
+  opacity: 0.5 }
+ #wrap1 ul li:nth-child(1) {top: 0} 
+ #wrap2 {margin-top: 20px;
+  }
+ #wrap2 ul { width:280px; height:390px; 
+  position:relative;  margin:0 auto;
+  list-style:none;
+  border: 5px solid #000 }
+ #wrap2 ul li { width:200px; 
+  height:250px; position:absolute; top:0; left: 100%;
+  opacity: 0.5 }
+ #wrap2 ul li:nth-child(1) {left: 0} 
+ #wrap3 {margin-top: 20px;
+  
+ }
+ #wrap3 ul { width:280px; height:390px; 
+  position:relative;  margin:0 auto;
+  list-style:none;
+  border: 5px solid #000 }
+ #wrap3 ul li { width:200px; 
+  height:250px; position:absolute; top:-100%; left: 0%;
+  opacity: 0.5 }
+ #wrap3 ul li:nth-child(1) {top:0 
+ }
+
+ #wrap4 {margin-top: 20px;
+
+ }
+ #wrap4 ul { width:280px; height:390px; 
+  position:relative;  margin:0 auto;
+  list-style:none;
+  border: 5px solid #000 }
+ #wrap4 ul li { width:200px; 
+  height:250px; position:absolute; top:0; left: -100%;
+  opacity: 0.5 }
+ #wrap4 ul li:nth-child(1) {left: 0}
+
+
+ #wrap5 {margin-top: 20px;
+ }
+ #wrap5 ul { width:280px; height:390px; 
+  position:relative;  margin:0 auto;
+  list-style:none;
+  border: 5px solid #000 }
+ #wrap5 ul li { width:200px; 
+  height:250px; position:absolute; top:0; left: 0%;
+  opacity: 0 }
+ #wrap5 ul li:nth-child(1) {opacity: 1}
+
+
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+ $(document).ready(function(){
+ //변수지정
+  var i = 0;
+
+  setInterval(function(){
+ 
+  i++;
+  if(i==3)i=0;
+
+ 
+  
+
+
+  //위로 올려라.
+  $('#wrap1 li').eq(i-1).css('top',0).stop().animate({'top':'-100%'},800);
+  $('#wrap1 li').eq(i).css('top','100%').stop().animate({'top':"0"},800)
+  
+  },2000);
+
+
+
+
+  
+ var ii = 0;
+  setInterval(function(){
+  
+  ii++;
+  if(ii==3)ii=0
+
+  
+
+  //왼쪽으로 이동해라.
+  $('#wrap2 li').eq(ii-1).css('left','0').stop().animate({'left':'-100%'},800);
+  $('#wrap2 li').eq(ii).css('left','100%').stop().animate({'left':"0"},800)
+  
+  },2000);
+
+
+  //아랫쪽으로 내려라
+
+  var iii=0;
+  setInterval(function(){
+
+   iii++;
+   if(iii==3)iii=0;
+
+   $('#wrap3 li').eq(iii-1).css('top','0').stop().animate({'top':'100%'},800);
+   $('#wrap3 li').eq(iii).css('top','-100%').stop().animate({'top':'0'},800);
+
+  },2000)
+
+  
+
+
+  //오른쪽으로 이동해라.
+  var iiii=0;
+
+  setInterval(function(){
+
+   iiii++;
+   if(iiii==3)iiii=0
+
+   $('#wrap4 li').eq(iiii-1).css('left',0).stop().animate({'left':'100%'},800);
+   $('#wrap4 li').eq(iiii).css('left','-100%').stop().animate({'left':'0'},800)
+
+  },2000);
+
+
+
+  //투명해져라.
+  var iiiii=0;
+
+  setInterval(function(){
+
+   iiiii++;
+   if(iiiii==3)iiiii=0
+
+   $('#wrap5 li').eq(iiiii-1).stop().animate({'opacity':'0'},800);
+   $('#wrap5 li').eq(iiiii).stop().animate({'opacity':'1'},800)
+
+  },2000)
+
+
+
+
+ })
+</script>
+
+
+</head>
+<body>
+ <div id="wrap1">
+  <ul>
+   <li class="image1"><img src="img/1.jpg" alt="1" /></li>
+   <li class="image2"><img src="img/2.jpg" alt="2" /></li>
+   <li class="image3"><img src="img/3.jpg" alt="3" /></li>
+  </ul>
+ </div>
+
+ <div id="wrap2">
+  <ul>
+   <li class="image1"><img src="img/1.jpg" alt="1" /></li>
+   <li class="image2"><img src="img/2.jpg" alt="2" /></li>
+   <li class="image3"><img src="img/3.jpg" alt="3" /></li>
+  </ul>
+ </div>
+ <div id="wrap3">
+  <ul>
+   <li class="image1"><img src="img/1.jpg" alt="1" /></li>
+   <li class="image2"><img src="img/2.jpg" alt="2" /></li>
+   <li class="image3"><img src="img/3.jpg" alt="3" /></li>
+  </ul>
+ </div>
+ <div id="wrap4">
+  <ul>
+   <li class="image1"><img src="img/1.jpg" alt="1" /></li>
+   <li class="image2"><img src="img/2.jpg" alt="2" /></li>
+   <li class="image3"><img src="img/3.jpg" alt="3" /></li>
+  </ul>
+ </div>
+
+  <div id="wrap5">
+  <ul>
+   <li class="image1"><img src="img/1.jpg" alt="1" /></li>
+   <li class="image2"><img src="img/2.jpg" alt="2" /></li>
+   <li class="image3"><img src="img/3.jpg" alt="3" /></li>
+  </ul>
+ </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <div class="wrap01">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
+    <style>
+        * {margin: 0;
+            padding: 0;}
+           ul {list-style: none;}
+           
+           .wrap01 {width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            background-color: blue;}
+            .wrap01 ul{width: 200px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;}
+            .wrap01 li {width: 200px;
+            height: 250px;
+            position: absolute;
+            left:0;
+            top:-100%;
+            background-size:100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            }
+
+            .wrap01 li:nth-child(1) {top: 0;}
+            .wrap01 li:nth-child(1) {background-image: url(img/1.jpg);}
+            .wrap01 li:nth-child(2) {background-image: url(img/2.jpg);}
+            .wrap01 li:nth-child(3) {background-image: url(img/3.jpg);}
+
+            
+    </style>
+
+
+<script>
+    $(document).ready(function(){
+
+let i =0;
+
+setInterval(function(){
+
+    i++;
+        if(i==3)i=0;
+        console.log(i);
+
+
+
+        $('.wrap01 li').eq(i-1).css({'top':0}).stop().animate({'top':'100%'},800);
+        $('.wrap01 li').eq(i).css({'top':'-100%'}).stop().animate({'top':'0'},800)
+
+        // 현재의 위치값을 입력후 변화할 위치값을 지정해 준다.
+
+
+},2000)
+})
+
+
+    
+
+</script>
+
+<div class="wrap02">
+  <div class="box">
+        <ul >
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+  </div>
+</div>
+
+<style>
+.wrap02 {width: 500px;
+    height: 100px;
+    overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;  margin-top: 50px; position: relative;}
+    .wrap02 .box {display: flex;
+    width: 1000px;
+    height: 100px;
+   
+  
+
+background-color: antiquewhite;}
+    .wrap02 ul {display: flex; width: 500px;
+                height: 100px;
+            position: absolute;}
+    .wrap02 li {width: 100px;
+                height: 100px;
+                background-color: skyblue;
+                border: 1px solid #000;
+                box-sizing: border-box;
+                }
+
+                .wrap02 ul:nth-child(1)  {left: 0;
+                    animation: ani1 10s linear infinite;}
+                .wrap02 ul:nth-child(2)  {left: 100%;
+                    animation: ani2 10s linear infinite;
+                   }         
+
+
+    @keyframes ani1 {
+
+        0% {left: 0;}
+        50% {left:-100%;}
+        50.0001% {left: 100%;}
+        100%{left: 0;}
+        
+    } 
+    @keyframes ani2 {
+
+        0% {left: 100%;}
+        50% {left:0%;}
+        100%{left: -100%;}
+        
+       
+}             
+
+.wrap02:hover ul:nth-child(1) {animation-play-state: paused;}
+.wrap02:hover ul:nth-child(2) {animation-play-state: paused;}
+
+</style>
+
+
+
+</body>
+</html>

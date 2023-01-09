@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jQuery 공작소 : 다중 예약 애니메이션 완벽히 멈추기</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css" href="https://superkts.com/jquery/core.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.wrapper { padding:0 !important; margin-bottom:30px; }
+	.wrapper .contents .ex .e { padding-top:50px; }
+	.wrapper .contents .ex .url { font-size:12pt; text-align:center; margin-bottom:10px; }
+</style>
+
+<div class="wrapper">
+	<h1>다중 예약 애니메이션 완벽히 멈추기</h1>
+	<div class="contents">
+		<div class="ex">
+			<div class="url"><a class="link2" href="http://superkts.com/jquery/@breakMe" target="_blank">▶ jQuery 공작소에서 보기</a></div>
+			<div class="t2">애니메이션 멈추기</div>
+			<div class="e ac">
+
+
+<!-- 소스 시작 -->
+
+<style type="text/css">
+	.css_test {
+		text-align:left;
+		height:150px;
+	}
+	.css_test img {
+		position:relative;
+		width:200px;
+		margin-top:20px;
+	}
+</style>
+
+움직여랏 버튼을 눌러보세요.<br>
+처음 한번은 애니메이션을 끝까지 봐주세요.<br>
+다시 움직여랏 버튼을 먼저 누르고 멈추기 버튼을 눌러보세요.<br>
+<br>
+<button type="button" class="bset1 mb10" onclick="j_test()">움직여랏!</button>
+<button type="button" class="bset1 wauto mb10 blue" onclick="$('.css_test img').clearQueue().stop()">완벽히 멈추기</button><br>
+
+<div class="css_test">
+	<img src="//superkts.com/img/huk1.gif" />
+</div>
+<br><br><br>
+
+<script type="text/javascript">
+	function j_test(){
+		var q = $( '.css_test img' ).queue('fx'); // fx 는 기본 이름입니다. (지정하지 않았을 때)
+		if(q.length > 0) return; // 예약이 되어있는 상태면 실행 종료하기 (버튼 연타시 중복실행 방지)
+
+		// 보기 편하게 줄바꿔서 코딩했습니다.
+		$( '.css_test img' )
+		.css({ top : 0, left : 0 })
+		.attr( 'src', '//superkts.com/img/huk1.gif' )
+		.animate({ left : '+=200' }, 1500)
+		.queue(function(){
+			// queue 메소드를 사용했다면 반드시 dequeue 를 사용해서 마감처리 해야함
+			$(this).attr( 'src', '//superkts.com/img/huk2.gif' ).dequeue(); // 표정 바꾸기
+		})
+		.delay(1000) // 1초 대기
+		.queue(function(){
+			$(this).attr( 'src', '//superkts.com/img/huk1.gif' ).dequeue(); // 표정 되돌리기
+		})
+		.animate({ left : '+=200' }, 1500)
+	}
+</script>
+
+<!-- 소스 종료 -->
+
+
+			</div>
+		</div>
+		<div class="ac">
+			<a href="http://superkts.com/jquery/" target="_blank">jQuery 공작소</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://superkts.com/css/" target="_blank">CSS 공작소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

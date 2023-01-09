@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스가 올라가면 멈추는슬라이드</title>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <div class="wrap01">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .wrap01 {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: blue;
+        }
+
+        .wrap01 ul {
+            width: 200px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .wrap01 li {
+            width: 200px;
+            height: 250px;
+            position: absolute;
+            left: -100%;
+            top: 0%;
+            background-size: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+
+        .wrap01 li:nth-child(1) {
+            left: 0;
+        }
+
+        .wrap01 li:nth-child(1) {
+            background-image: url(img/1.jpg);
+        }
+
+        .wrap01 li:nth-child(2) {
+            background-image: url(img/2.jpg);
+        }
+
+        .wrap01 li:nth-child(3) {
+            background-image: url(img/3.jpg);
+        }
+    </style>
+
+
+    <script>
+        $(document).ready(function () {
+
+            let i = 0;
+
+            let interval = setInterval(slide, 2000);
+
+
+
+            // div에 마우스가 들어갔을때 슬라이드가 멈추어라. 
+
+            $('.wrap01').mouseenter(function () {
+
+                clearInterval(interval)
+            })
+            // div에 마우스가 나왔을때 슬라이드가 시작해라. 
+            $('.wrap01').mouseleave(function () {
+
+                interval = setInterval(slide, 2000)
+            })
+
+
+            function slide() {
+
+
+                i++;
+                if (i == 3) i = 0;
+             
+
+
+
+                $('.wrap01 li').eq(i - 1).css({
+                    'left': 0
+                }).stop().animate({
+                    'left': '100%'
+                }, 800);
+                $('.wrap01 li').eq(i).css({
+                    'left': '-100%'
+                }).stop().animate({
+                    'left': '0'
+                }, 800)
+
+                // 현재의 위치값을 입력후 변화할 위치값을 지정해 준다.
+            }
+
+
+
+
+        })
+    </script>
+
+
+
+
+
+    <h3>css를 통한 애니메이션멈추기 </h3>
+
+    <div class="wrap02">
+        <div class="box">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <ul>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="wrap03">
+        <p>left</p>
+        <ul>
+            <li>1</li>
+            <li class="on">2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+
+
+    <style>
+        .wrap02 {
+            width: 500px;
+            height: 100px;
+            margin-right: auto;
+            margin-left: auto;
+            background-color: blueviolet;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wrap02 .box {
+            display: flex
+        }
+
+        .wrap02 ul {
+            display: flex;
+            position: absolute;
+        }
+
+        .wrap02 li {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            box-sizing: border-box;
+            background-color: lemonchiffon;
+        }
+
+        .wrap02 ul:nth-child(1) {
+            left: 0;
+            animation: ani1 30s linear infinite;
+        }
+
+        .wrap02 ul:nth-child(2) {
+            left: 100%;
+            animation: ani2 30s linear infinite;
+        }
+
+        .wrap02:hover ul:nth-child(1) {
+            animation-play-state: paused;
+        }
+
+        .wrap02:hover ul:nth-child(2) {
+            animation-play-state: paused;
+        }
+
+        .wrap02 li:hover {
+            color: red;
+        }
+
+        @keyframes ani1 {
+            0% {
+                left: 0;
+            }
+
+            50% {
+                left: -100%;
+            }
+
+            50.00001% {
+                left: 100%;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+        @keyframes ani2 {
+            0% {
+                left: 100%;
+            }
+
+            50% {
+                left: 0;
+            }
+
+            100% {
+                left: -100%;
+            }
+        }
+
+        .wrap03 {
+            width: 600px;
+            height: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: grey;
+            margin-top: 50px;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+
+           
+        }
+
+        .wrap03 ul {
+            
+            height: 250px;
+            display: flex;
+            left: 0;
+            transition: all 0.5s;
+         
+            
+            position: absolute;
+        }
+
+        .wrap03 li {
+            font-size:120px;
+            width: 200px;
+            height: 250px;
+            transform: scale(0.5);
+          
+       
+            background-size: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            transition: all 0.5s;
+            background-color: aqua;
+            text-align: center;
+         
+          
+           
+        }
+        
+        .wrap03 li.on {transform: scale(1);}
+   
+
+       
+      
+        .wrap03 p {position: absolute;
+        top: 50%;
+    left: 0;
+z-index: 10;
+cursor: pointer;
+display: none;}
+    </style>
+
+<script>
+
+
+
+//     $(document).ready(function(){
+
+     
+//         let a=0
+//     $('.wrap03 p').click(function(){
+
+//   a++;
+//   console.log(a)
+  
+           
+//             let add = $('wrap03 li').eq(a).clone()
+//             $('.wrap03 ul').css({'left':-200*a})
+//             $('.wrap03 li').removeClass('on')
+//             $('.wrap03 li').eq(a+1).addClass('on')
+//             $('.wrap03 li').eq(a-1).clone().appendTo('.wrap03 ul')
+
+
+//         })
+//         let ii=0
+
+//          let ck = setInterval(function(){
+//             $('.wrap03 p').trigger('click')
+
+
+
+//         },2000)
+    
+
+      
+            
+  
+      
+//     $('.wrap03').mouseenter(function(){
+//         clearInterval(ck)
+//     })    
+//     $('.wrap03').mouseleave(function(){
+
+//         ck = setInterval(function(){
+//             $('.wrap03 p').trigger('click')
+
+
+
+//         },2000)
+    
+//     })
+        
+
+    
+
+
+
+
+
+    })
+</script>
+
+</body>
+
+</html>
