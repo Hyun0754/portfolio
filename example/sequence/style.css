@@ -1,0 +1,118 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* 전체설정 */
+*{margin: 0; padding: 0;}
+ul.ol {list-style: none;}
+li{list-style: none;}
+a {text-decoration: none; color: #fff;}
+img {vertical-align: bottom; border: none;}
+body {
+    font-family: 'Orbitron', sans-serif; 
+    position: fixed; 
+    width: 100%; height: 100%;
+    background-color: #111;
+    color: #fff;}
+
+/* 배경이미지 */
+.bg {
+    background-image: url(/img/bgLine.png);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    }
+/* 로고 */
+header {}
+header h1 {
+    text-align: center;
+    padding: 50px 0;
+    width: 400px;
+    margin: 0 auto;}
+
+/* 네비 */
+nav {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 50px;
+    left: 0; top: 50%;
+    margin-top: -25px;
+    background-image: url(/img/tr.png);
+    }
+nav>ul {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    }
+nav>ul>li {
+    flex: 1; 
+    text-align: center;
+    position: relative;}
+nav>ul>li>a {display: block; transition: all 0.5s; opacity: 1;}
+/* 서브메뉴 설정 */
+nav div {
+    position: absolute;
+    width: 200px; height: 300px;
+    background-image: url(/img/tr.png);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    left: 0; top: -50px;
+    opacity: 0;
+    transition: all 1s;}
+nav>ul>li:hover div {
+    transform: rotateY(360deg);
+    opacity: 1;
+    top: -100px;}
+nav>ul>li:hover>a {
+    transform: translateY(-50px);
+    opacity: 0;
+
+}
+nav div p {
+    width: 100%;
+    height: 90px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    overflow: hidden;}
+nav div p img {
+    width: 100%; height: auto; 
+    opacity: 0.8;}
+nav div h2 {
+    position: absolute;
+    width: 100%; height: 50px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    left: 0; top: 100px;
+    }
+nav div ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;}
+nav div li {}
+nav div li a {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #111;
+    padding: 8px 0; 
+    color: #888;
+    font-size: 11px;}
+
+
+
+/* 시퀀스설정 */
+section {
+    left: 0; top: 50%;
+    width: 100%; height: 500px;
+    margin-top: -250px;
+    position: fixed;
+    overflow: hidden;}
+section img {
+    width: 100%;
+    height: auto;
+    }

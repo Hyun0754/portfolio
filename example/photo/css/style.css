@@ -1,0 +1,135 @@
+@charset 'UTF-8';
+
+/* 전체설정 */
+*{margin: 0; padding: 0;}
+ul,ol {list-style: none;}
+a {text-decoration: none; color: #000;}
+img {vertical-align: bottom; border: none;}
+body {height: 3000px; width: 100%;}
+
+/* logo설정 */
+h1 {
+    position: fixed;
+    background-image: url();
+    right: 20px; top: 20px;}
+/* gnb설정 */
+.gnb {
+    left: 60px; top: 50%; /*임시설정 항상 section위에 위치하게 배치할예정*/
+    position: fixed;
+    display: flex;
+    margin-top: -300px;}
+.gnb li {
+    margin-right: 30px;
+    cursor: pointer;
+    }
+/* txt설정 */
+.txt {
+    position: fixed;
+    width: 300px;
+    right: 20px;
+    top: 50%;
+    margin-top: -100px;
+    }
+/* section설정 */
+section {
+    position: fixed;
+    width: 4600px;
+    height: 400px;
+    top: 50%;
+    margin-top: -200px;
+    }
+article {
+    width: 180px;
+    height: 400px;
+    margin: 10px;
+    float: left;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px #bbb;
+    overflow: hidden;
+    transition: all 0.7s;
+    top: 50%; margin-top: -200px;
+    }
+article h2 {
+    position: absolute;
+    background-color: #111;
+    opacity: 0.4;
+    width: 100%;
+    top: 300px;
+    right: 0;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.5s;
+    z-index: 5;}
+article h2 a{
+    padding-left: 20px;
+    display: block;
+    font-size: 14px;
+    line-height: 3.5;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: bold;}
+article strong {
+    position: absolute;
+    display: block;
+    left: 0; top: 0;
+    width: 100%; height: 300px;
+    overflow: hidden;
+    opacity: 0.4;
+    text-align: center;
+    transition: all 0.5s;
+    }
+article:hover strong{opacity: 1; }
+article:hover h2{opacity: 1;}
+article strong img {}
+article p {
+    text-align: center;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.8s;}
+article p img {width: auto; height: 100%;}
+article em {
+    display: inline-block;
+    position: absolute;
+    bottom: 50px; right: -300px; /*변환할예정*/
+    transition: all 0.5s; 
+    z-index: 3; 
+    opacity: 0;  
+    }
+article span {
+    position: absolute;
+    right: -300px; top: 110px;
+    font-size: 20px;
+    color: #fff;
+    z-index: 10;
+    cursor: pointer;
+    }
+/* article.on 설정 */
+article.on {
+    width: 780px;
+    height: 500px;
+    margin-top: -250px;
+    }
+article.on strong {
+    opacity: 0;}
+article.on h2 {
+    top: 100px;
+    right: 0;
+    height: 100px;
+    background-color: #111;
+    opacity: 0.3;
+    }
+article.on h2 a {font-size: 30px;}
+article.on p {
+    opacity: 1;
+    height: 500px;
+    margin-top: -250px;
+    }
+article.on em {right: 20px; opacity: 1;}
+article.on span {
+    right: 20px;}
