@@ -6,61 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse Effect Script</title>
     <style>
-        @font-face {
-            font-family: 'NEXONLv1Gothic';
-            font-weight: 300; 
-            font-style: normal; 
-            src: url(https://cdn.jsdelivr.net/gh/webfontworld/NEXONGothic/NEXONLv1GothicLowOTFLight.woff) format('woff');
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'NEXONLv1Gothic';
-            font-weight: 400; 
-            font-style: normal; 
-            src: url(https://cdn.jsdelivr.net/gh/webfontworld/NEXONGothic/NEXONLv1GothicOTF.woff) format('woff');
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'NEXONLv1Gothic';
-            font-weight: 700; 
-            font-style: normal; 
-            src: url(https://cdn.jsdelivr.net/gh/webfontworld/NEXONGothic/NEXONLv1GothicOTFBold.woff) format('woff');
-            font-display: swap;
-        }
-        * {
-            margin: 0; padding: 0;
-        }
+        * {margin: 0; padding: 0;}
     
-        /* mouse */
-        .mouse {
-            background: #222;
-            color: #fff;
-            font-family: 'NEXONLv1Gothic';
-            font-weight: 400;
-        }
-        .bg {
-            position: relative;
-            height: 100vh;
-            background-image: url(../assets/img/bg5@2.jpg);
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
-        .bg::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(52, 5, 70, 0.7);
-            z-index: -1;
-        }
     
         /* info */
         .info {
             color: #fff;
-            font-family: "NEXONLv1Gothic";
             padding: 20px;
             position: absolute;
             left: 0;
@@ -154,18 +105,9 @@
             object-fit: cover;
             transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
         }
-        .moveImage:hover .mImg img {
-            filter: grayscale(0%)
-        }
-        .moveImage .mText {
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-size: 1.3vw;
-            line-height: 1.6;
-            white-space: nowrap;
-        }
+
+
+
         .cursor {
             position: absolute;
             width: 20px; height: 20px;
@@ -189,10 +131,6 @@
                 <div class="mImg">
                     <img src="bg19.jpg" alt="이미지">
                 </div>
-                <div class="mText">
-                    <p>I never dreamed about success, I worked for it.</p>
-                    <p>나는 결코 성공에 대해 꿈꾸지 않았다, 나는 꿈을 위해 행동했다.</p>
-                </div>
             </div>
         </article>
     </main>
@@ -200,20 +138,9 @@
 
     <!-- info -->
     <div class="info">
-       
         <p>마우스 이펙트 - 이미지 효과</p>
     </div>
 
-
-    <div class="info left">
-        <ul>
-            <li>pageX : <span class="pageX">0</span></li>
-            <li>pageY : <span class="pageY">0</span></li>
-            <li>standardX : <span class="standardX">0</span></li>
-            <li>standardY : <span class="standardY">0</span></li>
-        </ul>
-    </div>
-    <!-- //info -->
 
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

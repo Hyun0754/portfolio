@@ -232,11 +232,11 @@
           if(delta>0){
             // 이전페이지로 이동
             let prev =$(this).prev().offset().top;
-            $('html,body').stop().animate({'scrollTop':prev},1400)
+            $('html,body').stop().animate({'scrollTop':prev},400)
             }else if (delta<0){
             //  다음페이지로 이동
             let next =$(this).next().offset().top;
-            $('html,body').stop().animate({'scrollTop':next},1400)
+            $('html,body').stop().animate({'scrollTop':next},400)
             }
             
 

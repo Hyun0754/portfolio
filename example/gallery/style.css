@@ -21,6 +21,14 @@ position: relative;
 margin-left: auto;
 margin-right: auto;
 margin-bottom: 10px;}
+/* 박스이미지 를 한곳에 모아둠 */
+.box_img>p {position: absolute;
+    left: 0;
+top: 0;
+display: none;}
+.box_img>p:nth-child(1) {display: block;}
+
+
 .thumbnail {height: 75px;
     width: 760px;
     margin-left: auto;
@@ -30,12 +38,7 @@ margin-bottom: 10px;}
     align-items: center;}
 
 
-/* 박스이미지 를 한곳에 모아둠 */
-.box_img>p {position: absolute;
-        left: 0;
-    top: 0;
-display: none;}
-.box_img>p:nth-child(1) {display: block;}
+
 
     /* 컨테이너 이미지를 가로정렬 */
 

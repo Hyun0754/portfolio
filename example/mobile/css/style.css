@@ -124,7 +124,8 @@ nav li:hover {
 .c2 {
     position: absolute;
     left: 0; top: 20px;
-    animation:ani2 100s linear infinite;
+    animation:ani2 30s linear infinite;
+    background-color: aqua;
     }
 /* 폰구름설정 */
 .p1 {
