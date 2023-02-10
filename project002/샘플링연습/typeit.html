@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+</head>
+<body>
+    <!-- 타이핑 예저 -->
+    <h1 id="title">
+        Lorem ipsum dolor sit amet
+    </h1>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            new TypeIt("#title") //선택자
+            .pause(1500) //일정시간 멈추기
+            .delete(4) //지우기(글자수)
+            .type('Green') //이후 글 작성(그린)
+            .go(); //시작
+        })
+    </script>
+</body>
+</html>

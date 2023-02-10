@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 /* 전체설정 */
-*{margin: 0; padding: 0;}
+*{margin: 0; padding: 0; box-sizing: border-box;}
 ul,ol{list-style:none;}
 a{text-decoration:none; color: #fff;}
 img{vertical-align:bottom; border:none;}
@@ -10,7 +10,10 @@ img{vertical-align:bottom; border:none;}
 body{
     font-family: 'Nanum Gothic',
     sans-serif; color: #fff;
-    /* overflow-x: hidden; */}
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    overscroll-behavior: none;}
 .bg{
     position:fixed;
     left: 0; top: 0;
@@ -26,31 +29,154 @@ body{
 /* 크기설정 */
 /* 제이쿼리에서 높이를 화면기준으로 변경될 section - 800px 
     내용에따라 높이가 자동변환 될 section  - 1000px / 500px*/
+header {
+        width:100%; 
+        height: 180px;}
 .main1{
-    width: 100%; height: 950px;}
+    width: 100%; height: 1000px;}
 .main2{
     width: 100%; height: 2000px;}
 .main3{
-    width: 100%; height: 1000px;}
-.main4{
-    width: 100%; height: 2000px;}
+    width: 100%; height: 3000px;}
 /* 공간설정  - 내용 완성 후 삭제예정*/
 section:nth-child(1){}
 section:nth-child(2){}
 section:nth-child(3){}
-header h1 {
-    border: 1px solid #fff;
+/* header설정 */
+.h1 {font-size: 30px;
     position: fixed;
+    left: 50px;
+    top: 50px;
+    background-color: #ffb941;
+    z-index: 99999;}
+.h2 {font-size: 30px;
+    position: fixed;
+    left: 50px;
     top: 100px;
-    left: 100px;
+    background-color: #ffb941;
+    z-index: 99999;}
+.h3 {font-size: 30px;
+    position: fixed;
+    left: 50px;
+    top: 150px;
+    background-color: #ffb941;
+    z-index: 99999;}
+.h4 {font-size: 30px;
+    position: fixed;
+    left: 50px;
+    top: 200px;
+    background-color: #ffb941;
+    z-index: 99999;}
+header {
+    display: flex;
+    width: 100%;
+    position: fixed; 
+    left: 0; top: 0; 
     z-index: 9999;
-    background-color: aqua;}
+    opacity: 1;
+    transition: all 0.5s;}
+
+header>.wrap1{max-width: 1280px;}
+header h1 {
+    margin-left: 150px;
+    width: 20%;
+    height: 100%;}
+h1 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(img/logo_white.png);
+    transition: all 0.5s;}
+nav{width: 60%;}
+.nav {
+    display: flex;
+    justify-content:flex-end;
+    width: 100%;
+    height: 100%;
+    align-items: center;}
+.nav li {width: 20%; margin-top: 30px;}
+.nav li a {
+    display: block;
+    font-size: 22px;
+    text-align: center;
+    color:#fff;}
+
+/* 서브메뉴 설정 */
+.none{
+    width: 100%;
+    background-color: #fff;
+    padding-top: 8px;
+    display: none;
+    }
+.submenu{
+    display: flex;
+    justify-content:flex-start;
+    width: 100%;
+    height: 60px;    
+    padding: 5px 5px;} 
+.submenu ul {
+    color: #000;
+    cursor: pointer;}
+.sub02{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;}
+.sub02 li{
+    border-right: 0.5px solid #444;
+    padding-right: 40px;}
+.sub02 li:nth-child(6){border-right:none;}
+.submenu ul.on {color: #ffb941;}
+.submenu li.on {color: #ffb941;}
+.submenu li a{
+    color: #000;
+    font-size: 20px;
+    display: block;
+    text-align:start;            
+    padding: 3px 3px ;}
+.icon{
+    margin-right: 150px;
+    justify-content: end;
+    align-items: center;
+    width: 20%;
+    display: flex;}
+.icon>.kor a{
+    margin-top: 30px;
+    display: block;
+    font-size: 22px;
+    text-align: center;
+    color:#fff;}
+.icon>.menuIcon a{
+    margin-top: 30px;
+    display: block;
+    font-size: 22px;
+    text-align: center;
+    color:#fff;
+    margin-left: 20px;
+    }
+
+.submenu li a {font-weight: normal;}
+.submenu li a:hover {color:#c00000;}
+.icon .kor a:hover {color: red;}
+.icon .menuIcon a:hover {color: red;}
+header:hover .kor a{color: #000;}
+header:hover .menuIcon a{color: #000;}
+header:hover {background-color: #fff;}
+header:hover .nav li a {color: #000;}
+header .nav li a:hover {color: #c00000;}
+header:hover h1 a {background-image:url(img/logo.png);}
 /* 메인1 설정 */
 .main1 {
     position: relative;
     width: 100%;}
 .main1Box1 {
-    bottom: 0;}
+    position: absolute;
+    top: 50%;
+    transform: translateY(0px);
+    transition: all 1s;}
 .main1Box1 h2 {
     font-size: 8rem;
     }
@@ -60,14 +186,18 @@ header h1 {
 
 /* 메인2의 Box1설정 */
 .main2{
-    width: 100%;}
+    width: 100%;
+    height: 2000px;
+    }
 .main2Box1{
     position:relative;
     width: 100%;
     height: 1000px;
     }
 .main2Box1 .txtBox1{
+    position: absolute;
     top: 50%;
+    left: -100px;
     z-index: 1;}
     .txtBox1 h2{
         font-size: 6rem;}
@@ -80,30 +210,33 @@ header h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    right: 0;
-    top: 50%;
+    position: absolute;
+    right: -100px;
+    top: 30%;
     width: 900px;
-    height: 450px;}
+    height: 500px;}
 
 /* 메인2의 Box2설정 */
 .main2Box2{
     position: relative;
     width: 100%;
-    height: 1000px;}
+    height: 1000px;
+    }
 .main2Box2 .img2{
     background-image: url(img/main2-2.jpg);
-    left:0;
-    top: 20%;
+    position: absolute;
+    left:-80px;
+    top: 30%;
     width: 900px;
     height: 450px;}
 .main2Box2 .txtBox2{
+    position: absolute;
     right: 0;
-    top: 20%;
+    top: 30%;
     z-index: 1;}
 .txtBox2 h2{
     font-size: 6rem;
-    text-align: end;
-    }
+    text-align: end;}
 .txtBox2 p{
     font-size: 2rem;
     text-align:end;}
@@ -115,32 +248,33 @@ header h1 {
 /* 메인3의 Box1설정 */
 .main3{width: 100%;}
 .main3Box1{
+    display: flex;
     width: 100%;
     height: 1000px;
     position: relative;}
 .main3Box1>.txtBox1{
-    width: 45%;
-    height:1000px;
-    left: 0;
-    top: 0;}
+    width: 50%;}
 .main3Box1>.txtBox1 h2{
     font-size: 6rem;
-    text-align: left;}
+    text-align: end;}
 .main3Box1>.txtBox1 p{
     font-size: 3rem;
     text-align: end;}
 .main3Box1>.txtBox1 .btn{
     font-size: 2rem;
-    text-align: end;}
+    text-align: end;
+    margin-top: 20px;
+    cursor: pointer;}
 .main3Box1 .container{
-    width: 55%;
+    position: relative;
+    width: 50%;
     height:100%;
-    right: 0;
+    right: -100px;
     top:0;}
 .main3Box1 .container .img{
-    width: 350px; height: 450px;
-    border-radius: 20px;
-    margin-top: 10px;}
+    position: absolute;
+    width: 300px; height: 400px;
+    border-radius: 20px;}
 .main3Box1 .container .img:nth-child(1){
     background-image: url(img/product1-1.png);
     background-repeat: no-repeat;
@@ -177,11 +311,13 @@ header h1 {
     height: 1100px;
     top:0px;}
 .main3Box2 .container{
-    width: 55%;
-    height: 1100px;
-    left: 0;}
+    position: relative;
+    width: 50%;
+    height: 1000px;
+    left:-50px;}
 .main3Box2 .container .img{
-    width: 350px; height: 450px;
+    width: 300px; height: 400px;
+    position: absolute;
     border-radius: 20px;}
 .main3Box2 .container .img:nth-child(1){
     background-image: url(img/product2-1.png);
@@ -212,45 +348,50 @@ header h1 {
     right: 20px;
     top: 560px;}
 .main3Box2 .txtBox2{
-    width: 45%;
-    height:1100px;
+    width: 50%;
+    height:1000px;
     position: absolute;
-    right:0;
+    right:-100px;
     top: 0px;}
 .main3Box2 .txtBox2 p{
-    font-size: 3rem;
+    font-size: 5rem;
     text-align: left;}
 .main3Box2 .txtBox2 .btn{
     font-size: 2rem;
-    text-align: left;}
+    text-align: left;
+    margin-top: 20px;
+    cursor: pointer;}
 
 /* 메인3의 Box3설정 */
 .main3{width: 100%;}
 .main3Box3{
     width: 100%;
     position: relative;
-    height: 1100px;
-    top: 0;}
+    height: 1000px;
+    top: 0;
+    }
 .main3Box3>.txtBox3{
-    width: 45%;
-    height:1100px;
     position: absolute;
-    left: 0;
+    width: 50%;
+    height:1000px;
+    left: -100px;
     top: 0;}
 .main3Box3>.txtBox3 p{
-    font-size: 3rem;
+    font-size: 5rem;
     text-align: end;}
 .main3Box3>.txtBox3 .btn{
     font-size: 2rem;
-    text-align: end;}
+    text-align: end;
+    margin-top: 20px;
+    cursor: pointer;}
 .main3Box3 .container{
     position: absolute;
-    width: 55%;
-    height: 1100px;
-    right: 0;
+    width: 50%;
+    height: 1000px;
+    right: -50px;
     top: 0;}
 .main3Box3 .container .img{
-    width: 350px; height: 450px;
+    width: 300px; height: 400px;
     position: absolute;
     border-radius: 20px;}
 .main3Box3 .container .img:nth-child(1){
@@ -281,145 +422,90 @@ header h1 {
     background-position: center bottom;
     right: 20px;
     top: 560px;}
-/* 메인4의 Box1설정 */
-.main4 {
-    width: 100%;
-    height: auto;
-    position:relative;
-    bottom: 0;
-    left: 0;
-    background-color: aqua;}
-.main4Box1{
-    position: absolute;
+/* 메인4 설정 */
+.main4{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
+    left: 0;
     }
-.main4Box1 .map{
-    width: 1920px; height:1000px;
+.main4 .container{
+    height: 100vh;
+    display: flex;}
+.main4 .container > * {min-width: 100vw;}
+section:not(.main4) {
+    min-height: 100vh;}
+.main4 article{
+    height: 100vh;
+    width: auto;
+    object-fit: cover;}
+.main4 .sld1{
+    width: 100%; height: 1000px;
+    background-color: rgb(150, 103, 41);
+    background-image: url(img/map.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;}
+.main4 .sld2{
+    width: 100%; height: 1000px;
+    background-color: cornflowerblue;
+    background-image: url(img/smog.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;}
+.main4 .sld3{
+    width: 100%; height: 1000px;
+    background-color: burlywood;
     background-image: url(img/map1.png);
-    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
-    position: relative
-    }
-.main4Box1 .smog{
-    position: relative;
-    width: 1920px; height:100%;
-    background-image: url(img/smog.jpg);
-    }
-.main4Box1 .map1{
+    background-position: center center;}
+.main4 .sld4{
+    width: 100%; height: 1000px;
+    background-color: aqua;
     background-image: url(img/map2.png);
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    width: 1920px; height:1000px;}
-    .map1Img{
-        position: absolute;
-        background-image: url(img/main3-1c.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center bottom;
-        width: 500px; height: 300px;
-        left:15%;
-        top:15%;}
-    .map1Txt{
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 600px;
-        height: 200px;
-        position: absolute;
-        left: 17%;
-        top: 40%;}
-    .map1Txt>p{
-        margin-top: 20px;
-        margin-left: 20px;
-        font-size: 18px;
-        line-height: 1.6;}
-.main4Box1 .map2{
-    position: relative;
-    background-image: url(img/map2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 1920px; height:1000px;}
-    .map2Txt{
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 600px;
-        height: 200px;
-        position: absolute;
-        font-size: 18px;
-        right: 12%;
-        bottom: 58%;
-        z-index: 2;}
-    .map2Txt p {
-        text-align: end;
-        margin-top: 20px;
-        margin-right: 20px;
-        font-size: 18px;
-        line-height: 1.6;}
-    .map2Img{
-        position: absolute;
-        background-image: url(img/main3-2d.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center bottom;
-        width: 500px; height: 300px;
-        right:10%;
-        bottom:30%;}
-.main4Box1 .map3{
-    position: relative;
+    background-position: center center;}
+.main4 .sld5{
+    width: 100%; height: 1000px;
+    background-color: #ffb941;
     background-image: url(img/map3.png);
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    display: flex;
-    width: 1920px; height:1000px;}
-    .map3Img{
-        position: absolute;
-        background-image: url(img/main3-3b.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center bottom;
-        width: 500px; height: 300px;
-        left:15%;
-        bottom:15%;}
-    .map3Txt{
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 500px;
-        height: 200px;
-        position: absolute;
-        left: 38.5%;
-        bottom: 15%;
-        z-index: 1;}
-    .map3Txt p {
-        text-align: end;
-        margin-top: 20px;
-        margin-right: 20px;
-        font-size: 18px;
-        line-height: 1.6;
-    }
-.main4Box1 .map4{
+    background-position: center center;}
+.main4 .sld6{
+    width: 100%; height: 1000px;
+    background-color: #c00000;
     background-image: url(img/map4.png);
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    background-position: center center;}
+.main4 .sld7{
+    width: 100%; height: 1000px;
+    background-color: #444;
+    position:relative;}
+.black{
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+.endImg{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1920px; height:1000px;}
-    .logoImg{
-        width: 400px;
-        height: 250px;
-        background-image: url(img/logo.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        }
-.main4Box1 .end{
-    width: 1920px; height:1000px;}
-    .endImg{
-        background-image: url(img/end.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        width: 1920px; height:1000px; 
+    width: 100%; height: 100%;
+    background-image: url(img/end.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative
     }
+
 
 
 
