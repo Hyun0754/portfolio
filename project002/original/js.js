@@ -3,7 +3,7 @@ $(document).ready(function(){
         let wd = $(window).width(); // 화면의 가로값
         let ht = $(window).height(); // 화면의 세로값
         let os = $('.main4').offset().top; //메인4의 오프셋값
-        $('.box').maxwidth(wd)
+        // $('.box').maxwidth(wd)
         $('.box').height(ht)
         $('.main4>article').width(wd)
         let mht = $('.main4').height(ht)

@@ -1680,8 +1680,8 @@ footer {font-size: 10px;}
     }
 /*639px이하 구간 -----------------------3구간 */
 @media(max-width:639px){
-    .wrap {max-width:639px; margin:0 auto;}
-    header {height: 100px;}
+    /* .wrap {max-width:639px; margin:0 auto;} */
+    header {height: 120px;}
     .main1 {height: auto;}
     .main2 {height:500px;}
     .main3 {height: 500px;}
@@ -1690,17 +1690,20 @@ footer {font-size: 10px;}
     .footer {height: 120px;}
     .weather{display: none;}
     /* header설정 */
-    header{margin: 0;}
+    header{margin: 0; background-color: rgba(255, 255, 255, 0.7);}
     header .ham{
         display: block;
         position: absolute;
         font-size:30px;
-        top: 50%;
-        margin-top:-30px;
+        top: 0;
+        margin-top:40px;
+        margin-left:40px;
         left: 0;
         z-index: 9999;}
     header h1 {
-        width: 50%;
+        padding-top: 30px;
+        width: 250px;
+        height: 80px;
         display: block;
         margin: 0 auto;}
     header .icon {display: none;}
@@ -2010,7 +2013,7 @@ footer {font-size: 10px;}
     .map1 .btn3 {padding: 8px 16px;}
     /* footer 설정 */
     footer {font-size: 10px;}
-    .top {right: 5%;}
+    .top {right: 15%;}
 }    
 
 

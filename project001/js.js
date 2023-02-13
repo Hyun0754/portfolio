@@ -142,8 +142,6 @@ $(document).ready(function(){
             $('.popup span').click(function(){
                 $('.popup').fadeOut('fast')
                 $('.popup').removeClass('on')
-            })
-          
-          
+            });
             
-})
+});
