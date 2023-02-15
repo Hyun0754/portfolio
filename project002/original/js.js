@@ -15,7 +15,7 @@ $(document).ready(function(){
         $('.h2').text(wd)
         $('.h3').text(mht)
         $('.h4').text(of)
-        })
+        });
     //  2뎁스 메뉴 슬라이드
     $('.navMenu li').mouseenter(function(){
         let i=$(this).index()
