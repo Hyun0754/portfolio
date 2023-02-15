@@ -320,6 +320,7 @@ header:hover h1 a {background-image:url(img/logo.png);}
 
 /* 메인3의 Box2설정 ..*/
 .main3Box2{
+    
     width: 100%;
     position: relative;
     height: 1100px;
