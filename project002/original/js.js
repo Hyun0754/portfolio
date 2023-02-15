@@ -2,10 +2,18 @@
 $(document).ready(function(){
         let wd = $(window).width(); // 화면의 가로값
         let ht = $(window).height(); // 화면의 세로값
+<<<<<<< HEAD
         let of = $('.main4').offset().top; //메인4의 오프셋값
         // $('.box').maxwidth(wd)
         // $('.box').height(ht)
         // $('.main4>article').width(wd)
+=======
+        let os = $('.main4').offset().top; //메인4의 오프셋값
+        // $('.box').maxwidth(wd)
+        $('.box').height(ht)
+        $('.main4>article').width(wd)
+        let mht = $('.main4').height(ht)
+>>>>>>> 079584720f901aec17e324a0143412fed926b3a4
         
     $(window).scroll(function(){
         let sc= $(window).scrollTop();
