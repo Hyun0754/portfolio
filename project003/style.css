@@ -9,7 +9,7 @@ img{vertical-align: bottom; border: none;}
     /*color*/
     --m-col:#a67d4b;
     --bg-col:#593a1e;
-    --p-col:#bf705e;
+    --p-col:#e6927f;
     --fon-col:#f2f2f2;
     --black-f:#1c1d1c;
     /*fontSize*/
@@ -91,18 +91,18 @@ section{
     background-size: cover;
     background-repeat: no-repeat;}
 .circle{
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
     border: 1px #f2f2f2 solid;
     margin: 0 auto;
     border-radius: 50%;
     transform: translateY(100px);}
-/*음악재생설정*/
+    /*음악재생설정*/
 .musicBox{
     position: absolute;
-    background-color: #bf705e;
+    background-color: var(--p-col);
     right: 0;
-    width: 25%;
+    width: 20%;
     top: 50%;
     margin-top: -40vh;
     height: 80vh;}
@@ -117,9 +117,19 @@ section{
     height: 100%;
     background-color:var(--m-col);}
 .player-track {
-    padding: 10px 30px 20px 100px;
-    background-color:#d9d9d9;
+    position: relative;
+    padding: 10px 30px 20px 120px;
+    background-color:#bdbdbd;
     transition: 0.3s ease top;}
+.album-img{
+    position: absolute;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    background-image: url(img/album13_500.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;}
 .album-name {
     color:var(--black-f);
     font-size: 18px;
@@ -134,7 +144,7 @@ section{
     overflow: hidden;}
 .current-time {float: left;}
 .track-length {float: right;}
-.current-time, #track-length {
+.current-time, #track-length{
     color: transparent;
     font-size: 12px;
     transition: 0.3s ease all;}
@@ -142,7 +152,7 @@ section{
 .current-time, 
 .track-time.active ,
 .track-length {color:var(--black-f);}
-.s-area, .seek-bar {
+.s-area,.seek-bar {
     position: relative;
     height: 5px;
     border-radius: 5px;}
@@ -150,14 +160,13 @@ section{
     background-color:#9b848a;
     cursor: pointer;}
 .ins-time {
-    position: absolute;
+    position:absolute;
     top: -29px;
     font-size: 12px;
-    white-space: pre;
     padding: 5px 6px;}
 .s-hover {
     position: absolute;
-    opacity: 0.2;}
+    opacity: 0.5;}
 .ins-time, .s-hover {background-color:var(--p-col);}
 .seek-bar {
     content: "";
@@ -190,6 +199,73 @@ section{
     transition: 0.2s all;}
 .button:hover i {
     color:var(--p-col)}
+/* 뮤직효과 설정 */
+
+@keyframes wave {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }}
+  .music-card {
+    box-shadow: 0px 10px 40px -15px rgba(0,0,0,0.5);
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    height: 500px;
+    border-radius: 6px;
+    margin: 0 auto;
+    margin-top: 50px;}
+  .image {
+    background: url(/img/r4.jpg );
+    background-size: cover;  
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+    height: 350px;
+    width: 300px;}
+  .image:after {
+    height: 150px;
+    content: '';
+    top: 200px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(rgba(4, 2, 4, 0), #353535);}
+  .wave {
+    position:absolute;
+    height: 750px;
+    width: 750px;
+    opacity: 0.9;
+    left: 0;
+    top: 0;
+    margin-left: -80%;
+    margin-top: -130%;
+    background: radial-gradient(#2c2c2c, #383737);}
+  .wave:nth-child(2),.wave:nth-child(3) {top: 10px;}
+  .playing .wave {
+    border-radius: 40%; 
+    animation: wave 4000ms infinite linear;}
+  .playing .wave:nth-child(2) {animation-duration: 4000ms;}
+  .wave:nth-child(2) {animation-duration: 80s;}
+  .playing .wave:nth-child(3) {animation-duration: 6000ms;}
+  .wave:nth-child(3) {animation-duration: 65s;}
+  .info{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;}
+  .title{
+    font-size: 26px;
+    font-weight: 400;
+    color:var(--black-f);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-family: 'Archivo', sans-serif;}
+  .artist{
+    color:var(--black-f);
+    font-size: 24px;
+    letter-spacing: 0.08;
+    font-family: 'Archivo', sans-serif;}
 /*섹션2설정*/
 .about{
     background-color: #593a1e;
@@ -207,7 +283,7 @@ section{
     height: 90vh;
     margin: 0 auto;
     display: flex;
-    background-color: blueviolet;}
+    background-color: rgb(255, 255, 255);}
 .profile {
     width: 33.3333%;
     background-color: #ddd;}
