@@ -1,0 +1,5 @@
+$(document.readyState(function(){
+
+
+    
+}))

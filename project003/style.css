@@ -1,0 +1,222 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Lora&display=swap');
+*{margin: 0; padding: 0;}
+ul,ol{list-style: none;}
+a{text-decoration: none; color: #fff;}
+img{vertical-align: bottom; border: none;}
+
+:root {
+    /*color*/
+    --m-col:#a67d4b;
+    --bg-col:#593a1e;
+    --p-col:#bf705e;
+    --fon-col:#f2f2f2;
+    --black-f:#1c1d1c;
+    /*fontSize*/
+    --title-t:50px;
+    --menu-t:16px;
+    --txt-t:16px;
+    --sm-t:12px; }
+/*font-family: 'Lora', serif;
+font-family: 'Archivo', sans-serif;*/
+body{
+    height: 100vh;
+    color:var(--fon-col);}
+header{
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    height: 100%;}
+header ul{
+    font-family: 'Lora', serif;
+    margin-left: 20px;
+    border: none;}
+header ul li {
+    position: relative;
+    padding: 5px 10px;
+    margin-top: 5px;
+    transition: 0.3s;}
+header ul li a {
+    font-weight: normal;
+    display: block;
+    text-align: center;
+    font-size: var(--menu-t);
+    color: var(--fon-col);}
+/*메뉴 호버설정*/
+::before,::after {
+    position: absolute;
+    content: "";}
+.menu li a:hover {color:var(--p-col)}
+.menu li:before, .menu li:after {
+    width: 40%; height: 2px;}
+.menu li:before,.menu li:after {bottom: 0;}
+.menu li:before {right: 50%;}
+.menu li:after {left: 50%;}
+.menu li:hover:before,.menu li:hover:after {
+    background-color:var(--p-col);
+    width: 50%;
+    transition:width 0.1s ease-in, height 0.15s 0.2s linear, opacity 0s 0.35s;}
+.menu li a:before,.menu li a:after {
+    width: 0%; height: 0%;
+    opacity: 0;
+    z-index: 2;
+    transition:width 0.1s ease-in, height 0.15s 0.2s linear, opacity 0s 0.35s;}
+.menu li a:before {
+    bottom: 0; left: 0;
+    border-left: 2px solid #bf705e;
+    border-top: 2px solid #bf705e;}
+.menu li a:after {
+    bottom: 0; right: 0;
+    border-right: 2px solid #bf705e;
+    border-top: 2px solid #bf705e;}
+.menu li a:hover:before,.menu li a:hover:after {
+    width: 50%; height: 100%;
+    opacity: 1;
+    transition: height 0.2s 0.2s, width 0.1s 0.4s}
+
+/*섹션설정*/
+#wrap{}
+section{
+    width: 100%;
+    height: 100vh;}
+/*섹션1 설정*/
+.home{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/mainBg.png);
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;}
+.circle{
+    width: 500px;
+    height: 500px;
+    border: 1px #f2f2f2 solid;
+    margin: 0 auto;
+    border-radius: 50%;
+    transform: translateY(100px);}
+/*음악재생설정*/
+.musicBox{
+    position: absolute;
+    background-color: #bf705e;
+    right: 0;
+    width: 25%;
+    top: 50%;
+    margin-top: -40vh;
+    height: 80vh;}
+#app-cover {
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    width:100%;
+    height: 150px;}
+.player {
+    position: relative;
+    height: 100%;
+    background-color:var(--m-col);}
+.player-track {
+    padding: 10px 30px 20px 100px;
+    background-color:#d9d9d9;
+    transition: 0.3s ease top;}
+.album-name {
+    color:var(--black-f);
+    font-size: 18px;
+    font-weight:bold;}
+.track-name {
+    color: var(--black-f);
+    font-size: 14px;
+    margin: 5px 0;}
+.track-time {
+    height: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;}
+.current-time {float: left;}
+.track-length {float: right;}
+.current-time, #track-length {
+    color: transparent;
+    font-size: 12px;
+    transition: 0.3s ease all;}
+.track-time.active,
+.current-time, 
+.track-time.active ,
+.track-length {color:var(--black-f);}
+.s-area, .seek-bar {
+    position: relative;
+    height: 5px;
+    border-radius: 5px;}
+.s-area {
+    background-color:#9b848a;
+    cursor: pointer;}
+.ins-time {
+    position: absolute;
+    top: -29px;
+    font-size: 12px;
+    white-space: pre;
+    padding: 5px 6px;}
+.s-hover {
+    position: absolute;
+    opacity: 0.2;}
+.ins-time, .s-hover {background-color:var(--p-col);}
+.seek-bar {
+    content: "";
+    position: absolute;
+    background-color:var(--p-col);
+    transition: 0.2s ease width;}
+.player-content {
+    position: relative;
+    height: 100%;}
+.player-controls {
+    background-color: #ad9ea2;
+    width:100%;
+    height: 40px;
+    float: right;
+    overflow: hidden;} 
+.control {
+    width: 33.333%;
+    float: left;}
+.button {
+    cursor: pointer;
+    padding: 12px;
+    width: auto;
+    height: auto;}
+.button i {
+    display: block;
+    color:var(--fon-col);
+    font-size:16px;
+    text-align: center;}
+.button, .button i {
+    transition: 0.2s all;}
+.button:hover i {
+    color:var(--p-col)}
+/*섹션2설정*/
+.about{
+    background-color: #593a1e;
+    height: 100vh;}
+.bgLp{
+    width: 100%;
+    height: 90vh;
+    background-image: url(img/lp_cover1.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;}
+.about article {
+    width: 80%;
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    background-color: blueviolet;}
+.profile {
+    width: 33.3333%;
+    background-color: #ddd;}
+.profile li {}
+.list {
+    width: 33.3333%;
+    background-color: #bbb;}
+.list li {}
+.albumList {
+    width: 33.3333%;
+    background-color: #ccc;}
+.albumList li {}
