@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+@font-face {
+  font-family: "longline";
+  src: url("https://assets.codepen.io/756881/Longline+Quart+FREE.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;}
+
+body {
+  height: 600vh;
+  width: 100vw;}
+.main1{
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+  }
+.main2{
+  width: 100%;
+  height: 100vh;
+  background-color: yellow;
+  background-attachment: fixed;
+  position: relative;
+  }
+.slider {
+  height: 20vh;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: blue;}
+.wheel {
+  position: sticky;
+  width: 1000px;
+  height: 1000px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: green;}
+.wheel__card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8%;
+  cursor: pointer;}
+img {
+  width: 100%;
+  pointer-events: none;
+  z-index: 999;
+  cursor: pointer;}
+  
