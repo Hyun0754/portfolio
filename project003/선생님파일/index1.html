@@ -1,0 +1,169 @@
+<!DOCTYpE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section>
+        <div class="box1">
+            <p>box1</p>
+        </div>
+        <div class="box2">
+            <p>box2</p>
+        </div>
+        <div class="box3">
+            <p>box3</p>
+        </div>
+        <div class="box4">
+            <p>box4</p>
+        </div>
+        <div class="box5">
+            <p>box5</p>
+        </div>
+        <div class="box6">
+            <p>box6</p>
+        </div>
+        <div class="box7">
+            <p>box7</p>
+        </div>
+        <div class="box8">
+            <p>box8</p>
+        </div>
+        <div class="box9">
+            <p>box9</p>
+        </div>
+        <div class="box10">
+            <p>box10</p>
+        </div>
+        <div class="box11">
+            <p>box11</p>
+        </div>
+        <div class="box12">
+            <p>box12</p>
+        </div>
+        <div class="box13">
+            <p>box13</p>
+        </div>
+        <div class="box14">
+            <p>box14</p>
+        </div>
+        <div class="box15">
+            <p>box15</p>
+        </div>
+        <div class="box16">
+            <p>box16</p>
+        </div>
+        <div class="box17">
+            <p>box17</p>
+        </div>
+        <div class="box18">
+            <p>box18</p>
+        </div>
+        <div class="box19">
+            <p>box19</p>
+        </div>
+        <div class="box20">
+            <p>box20</p>
+        </div>
+        <div class="box21">
+            <p>box21</p>
+        </div>
+        <div class="box22">
+            <p>box22</p>
+        </div>
+        <div class="box23">
+            <p>box23</p>
+        </div>
+        <div class="box24">
+            <p>box24</p>
+        </div>
+        <div class="box25">
+            <p>box25</p>
+        </div>
+        <div class="box26">
+            <p>box26</p>
+        </div>
+        <div class="box27">
+            <p>box27</p>
+        </div>
+        <div class="box28">
+            <p>box28</p>
+        </div>
+        <div class="box29">
+            <p>box29</p>
+        </div>
+        <div class="box30">
+            <p>box30</p>
+        </div>
+        
+        <span class="center"></span>
+    <span class="middle"></span>
+    </section>
+    <style>
+        * {margin: 0;
+        padding: 0;}
+        section {width: 2000px;
+                height: 2000px;
+            border-radius: 50%;
+        background-color: yellow;
+    position: fixed;
+left: 50%;
+top:20%;
+margin-left: -1000px;
+transform: rotate(90deg);}
+        div {width:50px;
+        height:100%;
+    position: absolute;
+left: 50%;
+top:0;
+margin-left: -25px;
+
+
+}
+
+span {position: absolute;}
+
+
+    p{width: 50px;
+        height: 50px;
+    background-color: red;
+position: absolute;
+
+left: 0;
+top: 0;}
+.center {width: 2px;
+        height: 1000px;
+    background-color: rgb(22, 240, 105);
+left: 50%;
+top:0;
+margin-left: -1px;
+}
+.middle {width: 1000px;
+        height: 2px;
+       top: 50%;
+    background-color: #000;
+left: 50%;
+
+margin-left: -500px;
+margin-top: -1px;}
+    </style>
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+
+    $(document).ready(function(){
+
+        for(var i=0; i<31; i++){
+
+            $('div').eq(i).css({'transform':'rotate('+12*i+'deg)'})
+        }
+    })
+</script>
+    
+</body>
+</html>

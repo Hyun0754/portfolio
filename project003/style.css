@@ -20,13 +20,28 @@ img{vertical-align: bottom; border: none;}
     /*  */
     --se:'Lora', serif;
     --sanse1:'Noto Sans KR', sans-serif;
-    --sanse2:'Lato', sans-serif;}
+    --sanse2:'Lato', sans-serif;
+    /* 책넘기기 */
+    --margin: 110px;
+    --background: #e2e2f5;
+    --perspective: 1800px;
+    --transition: transform 1s .2s, z-index 0s 0.5s;
+    --yellow: #ffce14;}
 /*: 'Lora', serif;
 : 'Archivo', sans-serif;*/
-body{
-    width: 5000px;
+body{color: #fff;}
+#wrap{
+    width: 500%;
+    height: 100%;
+    position: fixed;
+    left:0;
+    top: 0;
+    transition: all 1.3s;
+    display: flex;}
+.section{
+    width: 100%;
     height: 100vh;
-    color: #fff;}
+    box-sizing: border-box;}
 header{
     font-family: var(--se);
     z-index: 9999;
@@ -82,8 +97,6 @@ header li a:hover:before,header li a:hover:after {
     opacity: 1;
     transition: height 0.2s 0.2s, width 0.1s 0.4s}
 
-/*섹션설정*/
-#wrap{display: flex;}
 section{
     height: 100vh;}
 /*섹션1 설정*/
@@ -94,7 +107,8 @@ section{
     background-image: url(img/mainBg.png);
     background-position: top right;
     background-size: cover;
-    background-repeat: no-repeat;}
+    background-repeat: no-repeat;
+    position: relative;}
 .circle{
     width: 550px;
     height: 550px;
@@ -106,7 +120,7 @@ section{
 .musicBox{
     position: absolute;
     background-color: var(--p-col);
-    right: 0;
+    right: 0px;
     width: 20%;
     top: 50%;
     margin-top: -40vh;
@@ -209,7 +223,7 @@ section{
 @keyframes wave {
     0%   { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }}
-  .music-card {
+.music-card {
     box-shadow: 0px 10px 40px -15px rgba(0,0,0,0.5);
     background-color: #fff;
     overflow: hidden;
@@ -219,7 +233,7 @@ section{
     border-radius: 6px;
     margin: 0 auto;
     margin-top: 50px;}
-  .image {
+.image {
     background: url(/img/r4.jpg );
     background-size: cover;  
     position: absolute;
@@ -227,7 +241,7 @@ section{
     opacity: 0.5;
     height: 350px;
     width: 300px;}
-  .image:after {
+.image:after {
     height: 150px;
     content: '';
     top: 200px;
@@ -235,7 +249,7 @@ section{
     width: 100%;
     z-index: 1;
     background: linear-gradient(rgba(4, 2, 4, 0), #333);}
-  .wave {
+.wave {
     position:absolute;
     height: 750px;
     width: 750px;
@@ -245,15 +259,15 @@ section{
     margin-left: -80%;
     margin-top: -130%;
     background: radial-gradient(#2c2c2c, #383737);}
-  .wave:nth-child(2),.wave:nth-child(3) {top: 10px;}
-  .playing .wave {
+.wave:nth-child(2),.wave:nth-child(3) {top: 10px;}
+.playing .wave {
     border-radius: 40%; 
     animation: wave 4000ms infinite linear;}
-  .playing .wave:nth-child(2) {animation-duration: 4000ms;}
-  .wave:nth-child(2) {animation-duration: 80s;}
-  .playing .wave:nth-child(3) {animation-duration: 6000ms;}
-  .wave:nth-child(3) {animation-duration: 65s;}
-  .info{
+.playing .wave:nth-child(2) {animation-duration: 4000ms;}
+.wave:nth-child(2) {animation-duration: 80s;}
+.playing .wave:nth-child(3) {animation-duration: 6000ms;}
+.wave:nth-child(3) {animation-duration: 65s;}
+.info{
     position: absolute;
     bottom: 30px;
     left: 0;
@@ -390,7 +404,7 @@ section{
 .horBox h3 {font-size: 20px; font-weight: normal; line-height: 1;}
 .horBox h2 {font-size: 20px; font-weight: normal; line-height: 1;}
 .horBox:nth-child(1) .albumCover{background-image: url(img/album1_500.jpg);}
-.horBox:nth-child(2) .albumCover{background-image: url(img/album5_800.jpg);}
+.horBox:nth-child(2) .albumCover{background-image: url(img/album5_500.jpg);}
 .horBox:nth-child(4) .albumCover{background-image: url(img/album11_500.jpg);}
 .horBox:nth-child(6) .albumCover{background-image: url(img/album17_500.jpg);}
 .horBox:nth-child(7) .albumCover{background-image: url(img/album21_500.jpg);}
@@ -477,14 +491,18 @@ section{
     width: 100%;
     height:50px;
     top: 50%;
-    border-radius: 50%;
     display: block;
+    border: 1px solid #222;
+    opacity: 0.2;
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    animation: 10s infinite alternate ease-in-out rote;}
+    animation: 12s infinite alternate ease-in-out rote;
+    box-shadow: 5px 5px 10px;}
 .music h1:before {
+    border-color: #222222;
     z-index: -1;}
 .music h1:after {
-    box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);}
+    border-color: #fff;
+    box-shadow: 15px 25px 15px rgba(46, 46, 49, .8);}
 /* h1 애니메이션 */
 @keyframes rote {
     0% {transform: translateX(-50%) translateY(-50%) rotate(0deg);}
@@ -575,9 +593,18 @@ section{
     font-style: normal;}
 /* 섹션4 갤러리 설정 */
 .galley{
-    background-color: cadetblue;
-    height: 600vh;
-    width: 100vw;}
+    width: 100vw; height: 600vh;
+    position: relative;}
+.galleyBg{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;}
 .slider-section {
     height: 22vh;
     bottom: 0;
@@ -619,7 +646,6 @@ img {
     text-transform: uppercase;
     font-size: 14px;
     overflow: visible;} 
-
 .scroll-down .arrow {
     position: relative;
     top: 0px;
@@ -629,3 +655,4 @@ img {
     filter: invert(1);
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
     background-size: contain;}
+/* 섹션 5설정 */

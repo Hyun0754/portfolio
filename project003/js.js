@@ -1,9 +1,22 @@
 $(document).ready(function(){  		
 	let wd=$(window).width();
+	let ht = $(window).height()
+	let sNo = $('section').size();
 	console.log(wd)
 	$('section').width(wd);
-	let swd=$('section').width();
 	$('body').width(wd*5);
+	$('body').height(wd*sNo)
+	$('#wrap').height(ht)
+	$('#wrap').width(wd*sNo)
+
+
+		$('header li').click(function(){
+			let wd = $(window).width();
+			let i= $(this).index()
+			console.log(i)
+			$('#wrap').css({'left':-wd*i})
+		})
+	
 
 
     // BestMusic 섹션 설정
