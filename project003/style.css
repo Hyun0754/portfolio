@@ -72,8 +72,7 @@ header li a:before,header li a:after {
     content: "";}
 header li a:hover {color:var(--p-col)}
 header li:before, header li:after {
-    width: 40%; height: 2px;}
-header li:before,header li:after {bottom: 0;}
+    width: 40%; height: 1px;bottom: 0;}
 header li:before {right: 50%;}
 header li:after {left: 50%;}
 header li:hover:before,header li:hover:after {
@@ -92,10 +91,12 @@ header li a:after {
     bottom: 0; right: 0;
     border-right: 2px solid #bf705e;
     border-top: 2px solid #bf705e;}
-header li a:hover:before,header li a:hover:after {
+header li:hover a:before,header li:hover a:after {
     width: 50%; height: 100%;
     opacity: 1;
     transition: height 0.2s 0.2s, width 0.1s 0.4s}
+/* 메뉴 on값 설정 */
+.on{color:var(--p-col);}
 
 section{
     height: 100vh;}
@@ -116,15 +117,63 @@ section{
     margin: 0 auto;
     border-radius: 50%;
     transform: translateY(100px);}
+/* 뮤직 아이콘 */
+.angle{
+    top: 50%;
+    right: 18%;
+    width: auto;
+    height: 50px;
+    margin-top: -25px;
+    position: absolute;
+    z-index: 99;}
+.angle i {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    font-size: 60px;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 10s;}
+.angle .left{
+    z-index: 2;
+    text-align: end;
+    right: 0px;
+    display: none;
+    animation: aniLeft linear 1.5s infinite;}
+.angle .right{
+    z-index: 2;
+    display: none;
+    text-align:end;
+    right:20px;
+    animation: aniRight linear 1.5s infinite;}
+.angle .active {display: block;}
+/*애니메이션 버튼*/
+@keyframes aniLeft {
+0% {opacity: 1;
+transform: scale(1);
+right: 0;}
+100% {opacity: 0;
+transform: scale(1.1);
+right: 30px;}}	
+@keyframes aniRight {
+    0% {opacity: 1;
+    transform: scale(1);
+    right: 20;}
+    100% {opacity: 0;
+    transform: scale(1.1);
+    right:-10px;}}	
     /*음악재생설정*/
 .musicBox{
+    z-index: 1;
+    opacity: 0;
     position: absolute;
     background-color: var(--p-col);
-    right: 0px;
+    right: -400px;
     width: 20%;
     top: 50%;
     margin-top: -40vh;
-    height: 80vh;}
+    height: 80vh;
+    transition:all 1s;}
 #app-cover {
     bottom: 0px;
     right: 0px;
@@ -140,15 +189,40 @@ section{
     padding: 10px 30px 20px 120px;
     background-color:#eee;
     transition: 0.3s ease top;}
-.album-img{
-    position: absolute;
-    left: 10px;
+.hide{
     width: 100px;
     height: 100px;
-    background-image: url(img/album13_500.jpg);
+    position: absolute;
+    left: 10px;
+    top: 0;
+    background-color: #593a1e;
+    overflow: hidden;}
+.album-img{
+    position: absolute;
+    display: flex;
+    left:0;
+    width: 500px;
+    height: 100px;
+    font-size: 0;}
+.album-img li{
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;}
+.album-img li:nth-child(1){
+    background-image: url(img/album1_500.jpg);
+    z-index: 1;}
+.album-img li:nth-child(2){
+    background-image: url(img/album3_500.jpg);}
+.album-img li:nth-child(3){
+    background-image: url(img/album5_500.jpg);}
+.album-img li:nth-child(4){
+    background-image: url(img/album11_500.jpg);}
+.album-img li:nth-child(5){
+    background-image: url(img/album13_500.jpg);}
 .album-name {
     color:var(--black-f);
     font-size:var(--menuT);
@@ -179,6 +253,7 @@ section{
     background-color:#9b848a;
     cursor: pointer;}
 .ins-time {
+    display: none;
     position:absolute;
     top: -29px;
     font-size: 12px;
@@ -314,25 +389,77 @@ section{
     width: 280px;
     height:350px;
     border-radius: 50%;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     z-index: -1;
     transform:rotate(-30deg);
     left: -50px;
-    top: 50px;}
-.profileImg{
+    top: 80px;
+    opacity: 1;
+    transition: all 0.5s;}
+.card {
+    z-index: 99;
+    width:250px;
+    height:320px;
+    position: relative;
+    perspective: 2500px;
+    border-radius: 50%;
+    margin-top: 100px;}
+.cover-image {
+    border: 2px solid #fff;
+    border-radius: 50%;
     width: 250px;
     height: 320px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    margin-top: 80px;
     background-image: url(img/ruelProfile.png);
     background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover}
+.wrapper {
+    border-radius: 50%;
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;}
+.card:hover .wrapper {
+    border-radius: 50%;
+    transform: perspective(900px) translateY(-5%) rotateX(5deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(255, 255, 255, 0.75);}
+.card:hover .cover-image {
+    opacity: 0.8;
+    border: none;}
+.wrapper::before,
+.wrapper::after {
+    border-radius: 50%;
+    content: "";
+    opacity: 0;
+    width: 80%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;}
+.character {
+    border-radius: 50%;
+    width: 250px;
+    height: 320px;
+    opacity: 0;
+    background-image: url(img/ruel_nu4.png);
     background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
-    }
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -2;}
+.card:hover .character {
+    box-shadow: 5px 5px 25px 5px rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    opacity: 1;
+    transform: translate3d(60%, 30%, 300px);}
+/*출생txt*/
 .profile li .name {
     text-align: center;
-    font-size:26px;}
+    font-size:26px;
+    margin-top: 20px;}
 .profile .infoTxt{
     font-family: var(--sanse1);
     display: flex;
@@ -374,11 +501,13 @@ section{
 .dot{
     width: 20px;
     height: 20px;
-    background-color: #fff;
-    border-radius: 50%;}
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    z-index: 2;}
 .horLine{
     width: 50px;
     border-top: 2px solid #fff;
+    z-index: 1;
     }
 .albumBox{
     display: flex;
@@ -413,7 +542,7 @@ section{
     position:relative;
     width:40%;}
 .albumList ul {
-    display: none;
+    opacity: 0;
     width: 400px;
     height: 550px;
     position: absolute;
@@ -436,7 +565,7 @@ section{
     border-left: 5px solid #fff;}
 .albumList ul li p {font-size: 16px;}
 
-.albumList ul:nth-child(1){display: block;}
+.albumList ul:nth-child(1){opacity: 1;}
 .albumList ul:nth-child(1) li:nth-child(1){
     background-color: #9b848a;
     font-size: 50px;
@@ -461,10 +590,6 @@ section{
 /* 3d효과 적용 */
 /* 리스트 앨범 호버 */
 .albumCover:hover {transform: scale(1.1);}
-/* albumCover를 호버할시 점의 색이 변경
-    앨범리스트가 날아옴 */
-/* Music 설정 */
-/* 배경이미지 설정*/
 .music {
     font-family: var(--sanse2);
     width: 100%;
@@ -568,7 +693,8 @@ section{
     margin-top:0px; 
     margin-left:-100px;	
     opacity:0;	
-    z-index:1;}
+    z-index:1;
+    margin: 0 auto;}
 /* article 숨겨진 컨텐츠 */
 .contents article h3 {
     position:absolute;	
@@ -591,7 +717,7 @@ section{
 .contents article em {
     font-size:14px;
     font-style: normal;}
-/* 섹션4 갤러리 설정 */
+/* 섹션4 갤러리 설정 --------------------------------------------------------------*/
 .galley{
     width: 100vw; height: 600vh;
     position: relative;}
@@ -605,7 +731,112 @@ section{
     background-position: center center;
     background-size: cover;
     position: absolute;}
+/*가사 박스 설정*/
+.lyricsBox{
+    left: 50%; top: 50px;
+    margin-left: -550px;
+    position: relative;
+    width: 1100px;
+    height: 700px;
+    display: flex;
+    background-color: #a67d4b;}
+/*왼쪽 이미지 설정*/
+.lyricsBox .musicImg_box{
+    font-family:var(--sanse1);
+    position: absolute;
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    color: #ffffff;
+    background-image: url(img/r9.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;}
+.musicImg_box * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;}
+.musicImg_box h3 {
+    position: absolute;
+    padding-right: 20px;
+    top: 0%;
+    width: 100%;
+    background-color: #212121;
+    text-align: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size:var(--titleT);
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);}
+.musicImg_box h3:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0px;
+    border-style: solid;
+    border-width: 0 550px 80px 0;
+    border-color: transparent #212121 transparent transparent;}
+.musicImg_box .sns {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    background-color: #141414;
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);}
+.musicImg_box .sns:before {
+    position: absolute;
+    content: '';
+    bottom: 100%;
+    left: 0;
+    border-style: solid;
+    border-width: 80px 0 0 550px;
+    border-color: transparent transparent transparent #141414;
+    z-index: 1;}
+.sns .icons {
+    margin-top: 30px;}
+.sns .icons i {
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    display: inline-block;
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    opacity: 0.7;}
+.sns .icons i:hover {
+    opacity: 1;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;}
+.musicImg_box:hover h3,
+.musicImg_box.hover h3 {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);}
+.musicImg_box:hover .sns,
+.musicImg_box.hover .sns {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);}
+.sns:hover .icons,
+.sns.hover .icons {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);}
+/*오른쪽 가사 설정*/
+.musicTxt_box{
+    width: 50%;
+    height: 100%;
+    background-color: #2e2e31;
+    position:absolute;
+    right: 0;}
+.musicTxt_box .title{
+    font-size: var(--titleT);
+    color: var(--p-col);
+    margin-left: 30px;
+    margin-top: 10px;}
+.musicTxt_box p{
+    font-size: var(--txtT);
+    margin-left: 60px;}
 .slider-section {
+    z-index: 5;
     height: 22vh;
     bottom: 0;
     position: fixed;

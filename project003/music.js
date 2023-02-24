@@ -24,21 +24,19 @@ $(document).ready(function(){
                 'Younger',
                 "Not thinkin' bout you",
                 'Face to Face',
-                'Painkiller',
-                'green switch'], 
+                'Painkiller'], 
         trackNames = ['Ruel',
                     'Ruel',
                     'Ruel',
                     'Ruel',
                     'Ruel',
                     'Ruel'], 
-        albumArtworks = ['_1','_2','_3','_4','_5','_6'], 
-        trackUrl = ['https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/2.mp3',
-                    'https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/1.mp3',
-                    'https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/3.mp3',
-                    'https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/4.mp3',
-                    'https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/5.mp3',
-                    'https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/5.mp3',
+        albumArtworks = ['_1','_2','_3','_4','_5'],
+        trackUrl = ['play/Ruel_Say.mp3',
+                    'play/Ruel_Younger.mp3',
+                    'play/Ruel_Not Thinkin Bout You.mp3',
+                    'play/Ruel_Face To Face.mp3',
+                    'play/Ruel_Painkiller.mp3',
                     ],
         playPreviousTrackButton = $('#play-previous'), 
         playNextTrackButton = $('#play-next'), currIndex = -1;
@@ -48,16 +46,15 @@ $(document).ready(function(){
             if(audio.paused){
             playerTrack.addClass('active');
             checkBuffering();
-            i.attr('class','fas fa-pause');
+            i.attr('class','fa fa-pause');
             audio.play();}
             else{
             playerTrack.removeClass('active');
             clearInterval(buffInterval);
-            i.attr('class','fas fa-play');
+            i.attr('class','fa fa-play');
             audio.pause();
             }
-        },300);
-    }
+        },300);}
 
     function showHover(event){
     seekBarPos = sArea.offset(); 
