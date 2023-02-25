@@ -1,3 +1,4 @@
+// 022666
 $(document).ready(function(){  		
 	let wd=$(window).width();
 	let ht = $(window).height()
