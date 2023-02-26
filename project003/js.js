@@ -29,12 +29,14 @@ $(document).ready(function(){
 	$('.angle .left').click(function(){
 		$('.musicBox').css({'opacity':1})
 		$('.musicBox').css({'right':0})
+		
 		$('.angle .left').removeClass('active')
 		$('.angle .right').addClass('active')
 	});
 	$('.angle .right').click(function(){
 		$('.musicBox').css({'opacity':0})
-		$('.musicBox').css({'right':'-500px'})
+		$('.musicBox').css({'right':'-1300px'})
+		
 		$('.angle .right').removeClass('active')
 		$('.angle .left').addClass('active')
 		//$(this).css({'display':'none'})
@@ -105,7 +107,10 @@ $(document).ready(function(){
 		$(this).find("h3").stop().animate({"right":"-450px"},200);
 		$(this).find("p").stop().animate({"right":"-450px"},500);	
 	});
+	// whill_card 클릭시 가사텍스트 변경
+	$('.wheel__card').click(function(){
 
+	})
 });
 
 

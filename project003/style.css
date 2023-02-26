@@ -722,6 +722,7 @@ right: 30px;}}
     width: 100vw; height: 600vh;
     position: relative;}
 .galleyBg{
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -836,7 +837,7 @@ right: 30px;}}
     font-size: var(--txtT);
     margin-left: 60px;}
 .slider-section {
-    z-index: 5;
+    z-index: 2;
     height: 22vh;
     bottom: 0;
     position: fixed;
@@ -861,6 +862,8 @@ right: 30px;}}
     width: 6%;
     max-width: 200px;
     cursor: pointer;}
+.wheel__card:hover{
+    border: 1px solid #fff;}
 img {
     width: 100%;
     pointer-events: none;
