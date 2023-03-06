@@ -11,6 +11,7 @@ $(document).ready(function(){
         $('.box').height(ht)
         $('.main4>article').width(wd)
         let mht = $('.main4').height(ht)
+        //0306
         
     $(window).scroll(function(){
         let sc= $(window).scrollTop();

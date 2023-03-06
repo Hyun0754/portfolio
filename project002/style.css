@@ -19,7 +19,7 @@ body{
     position:fixed;
     left: 0; top: 0;
     }
-
+/* 0306 */
 /* 구글폰트,눈누폰트 등에서 import 미리설정 
     font-family 를 주석으로 가둬서 임시저장*/
 /* 우선순위 css는 덮어쓰기가 가능

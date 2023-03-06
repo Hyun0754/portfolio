@@ -1,5 +1,6 @@
 $(document).ready(function(){
     //윈도우의 넓이, 높이 
+    // 0306
     let wd = $(window).width() //1425
     let ht = $(window).height() 
     //box의 넓이, 높이
