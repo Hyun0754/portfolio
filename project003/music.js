@@ -1,3 +1,4 @@
+// 022666
 $(document).ready(function(){
     $(function()
     {
@@ -34,7 +35,7 @@ $(document).ready(function(){
         albumArtworks = ['_1','_2','_3','_4','_5'],
         trackUrl = ['play/Ruel_Say.mp3',
                     'play/Ruel_Younger.mp3',
-                    'play/Ruel_Not Thinkin Bout You.mp3',
+                    'play/Ruel_Not Thinkin.mp3',
                     'play/Ruel_Face To Face.mp3',
                     'play/Ruel_Painkiller.mp3',
                     ],

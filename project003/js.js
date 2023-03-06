@@ -56,6 +56,7 @@ $(document).ready(function(){
 	$('.angle .left').click(function(){
 		$('.musicBox').css({'opacity':1})
 		$('.musicBox').css({'right':20})
+		$('.musicBox').css({'right':0})
 		
 		$('.angle .left').removeClass('active')
 		$('.angle .right').addClass('active')
@@ -158,5 +159,9 @@ $(document).ready(function(){
 		$('.txt_box>div').eq(aaa+1).css({'opacity':1})
 
 	})
+	// whill_card 클릭시 가사텍스트 변경
+	$('.wheel__card').click(function(){
 
+
+	})
 });
