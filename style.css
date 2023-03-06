@@ -83,7 +83,7 @@ header .menu li a {
     border: 1px solid #222;
     box-sizing: border-box;
     transform: translateZ(-200px);
-    transition: all 0.5s;
+    transition: all 0.7s ease-in-out;
     background-color: #f6f6f6;
     background-image:var(--bg);
     box-shadow: 0 -5px 30px 5px rgb(51, 51, 51);
@@ -137,7 +137,7 @@ header .menu li a {
     width: 100%;
     border-bottom: solid 1px #222;
     background-color:rgba(255, 255, 255,0);
-    transition:all 0.3s;}
+    transition:all 0.2s;}
 .www>span{
     line-height: 2;
     box-sizing: border-box;
@@ -152,13 +152,14 @@ header .menu li a {
 .main1 {
     border-right: 1px solid #222;
     box-sizing: border-box;
-    transition: all 2s ease-in-out;}
+    transition: all 0.5s linear;}
 .area1{
     width: auto;
     height:auto;
     border-bottom: 1px solid #222;
     position: relative;
-    transition: all 1s ease-in-out;}
+    transition: all 0.5s linear;
+    transition-delay: 1s; }
 .mainTxt{
     width: auto;
     height: auto;
@@ -168,7 +169,7 @@ header .menu li a {
     height: auto;
     top:50px;
     left: 50px;
-    transition: all 0.5s;}
+    transition: all 0.2s linear;}
 .mainTxt.on{
     opacity: 1;
     color:#222;}
@@ -177,7 +178,7 @@ header .menu li a {
     height: auto;
     position:absolute;
     opacity: 0;
-    transition: all 0.5s;}
+    transition: all 0.2s linear;}
 .works.on{opacity: 1;}
 .mainTxt h2{
     font-size: 5em;}
@@ -189,14 +190,14 @@ header .menu li a {
     width: auto;
     display: flex;
     position: relative;
-    transition: all 1.5s linear;}
+    transition: all 2s;}
 .area2 .mokupLine{
     position: relative;
     width: 0;
     height: auto;
     border-right: 1px solid #222;
     display: flex;
-    transition: all 2.5s;}
+    transition:width 1s linear;}
 .area2 .mokupImg{
     position: absolute;
     opacity: 0;
@@ -213,11 +214,11 @@ header .menu li a {
 .area2 .mokupImg:nth-child(1){background-image: url(img/11.png);}
 .area2 .mokupImg:nth-child(2){background-image: url(img/main3-1d.jpg);}
 .area2 .mokupImg:nth-child(3){background-image: url(img/lp_cover1.png);}
-
 .area2 .mokupBox{
     width: auto;
     height: auto;
-    position: relative;}
+    position: relative;
+transition: all 0.2s;}
 .area2 .mokupTxt{
     opacity: 0;
     z-index: 1;
@@ -250,9 +251,8 @@ header .menu li a {
     transform-origin: right;
     transform: scaleX(0);
     background: #222;
-    transition: transform 300ms ease;
+    transition: all 0.2s;
     z-index: 1;}
-
 .mokupTxt li a:hover::before {
     transform-origin: left;
     transform: scaleX(1);}
@@ -286,7 +286,7 @@ header .menu li a {
     width: 100%;
     position: absolute;
     height: 100%;
-    transition: all 0.2s;}
+    transition: width 0.1s;}
 .licen h3{
     margin-top: 10px;
     margin-left: 80px;
@@ -313,11 +313,11 @@ header .menu li a {
     -ms-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.50), 0 15px 12px rgba(0, 0, 0, 0.42);
     -o-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.50), 0 15px 12px rgba(0, 0, 0, 0.42);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.50), 0 15px 12px rgba(0, 0, 0, 0.42);
-    -webkit-transition: box-shadow 0.25s ease-in-out;
-    -moz-transition: box-shadow 0.25s ease-in-out;
-    -ms-transition: box-shadow 0.25s ease-in-out;
-    -o-transition: box-shadow 0.25s ease-in-out;
-    transition: box-shadow 0.25s ease-in-out;;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -ms-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;;
     }
 .area2 .licen .dot:hover {
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -365,6 +365,121 @@ header .menu li a {
     border-radius: 50%;
     margin-left: 10px;
     transition: 0.5s;}
+.html{animation: pie1 0.5s forwards;}
+.css{animation: pie2 0.5s forwards;}
+.js{animation: pie3 0.5s forwards;}
+.ps{animation: pie4 0.5s forwards;}
+.ai{animation: pie5 0.5s forwards;}
+.fg{animation: pie6 0.5s forwards;}
+
+@keyframes pie1{
+    0%{background : conic-gradient(#DE5026 0% 0%, #ffffff 0% 100%)}
+    6%{background : conic-gradient(#DE5026 0% 5%, #ffffff 0% 100%)}
+    12%{background : conic-gradient(#DE5026 0% 10%, #ffffff 0% 100%)}
+    18%{background : conic-gradient(#DE5026 0% 15%, #ffffff 0% 100%)}
+    25%{background : conic-gradient(#DE5026 0% 20%, #ffffff 0% 100%)}
+    33%{background : conic-gradient(#DE5026 0% 25%, #ffffff 0% 100%)}
+    38%{background : conic-gradient(#DE5026 0% 30%, #ffffff 0% 100%)}
+    44%{background : conic-gradient(#DE5026 0% 35%, #ffffff 0% 100%)}
+    50%{background : conic-gradient(#DE5026 0% 40%, #ffffff 0% 100%)}
+    56%{background : conic-gradient(#DE5026 0% 45%, #ffffff 0% 100%)}
+    62%{background : conic-gradient(#DE5026 0% 50%, #ffffff 0% 100%)}
+    68%{background : conic-gradient(#DE5026 0% 55%, #ffffff 0% 100%)}
+    75%{background : conic-gradient(#DE5026 0% 60%, #ffffff 0% 100%)}
+    82%{background : conic-gradient(#DE5026 0% 65%, #ffffff 0% 100%)}
+    88%{background : conic-gradient(#DE5026 0% 70%, #ffffff 0% 100%)}
+    94%{background : conic-gradient(#DE5026 0% 75%, #ffffff 0% 100%)}
+    100%{background : conic-gradient(#DE5026 0% 80%, #ffffff 80% 80%)}}
+@keyframes pie2{
+    0%{background : conic-gradient(#E09D26 0% 0%, #ffffff 0% 100%)}
+    6%{background : conic-gradient(#E09D26 0% 5%, #ffffff 0% 100%)}
+    12%{background : conic-gradient(#E09D26 0% 10%, #ffffff 0% 100%)}
+    18%{background : conic-gradient(#E09D26 0% 15%, #ffffff 0% 100%)}
+    25%{background : conic-gradient(#E09D26 0% 20%, #ffffff 0% 100%)}
+    33%{background : conic-gradient(#E09D26 0% 25%, #ffffff 0% 100%)}
+    38%{background : conic-gradient(#E09D26 0% 30%, #ffffff 0% 100%)}
+    44%{background : conic-gradient(#E09D26 0% 35%, #ffffff 0% 100%)}
+    50%{background : conic-gradient(#E09D26 0% 40%, #ffffff 0% 100%)}
+    56%{background : conic-gradient(#E09D26 0% 45%, #ffffff 0% 100%)}
+    62%{background : conic-gradient(#E09D26 0% 50%, #ffffff 0% 100%)}
+    68%{background : conic-gradient(#E09D26 0% 55%, #ffffff 0% 100%)}
+    75%{background : conic-gradient(#E09D26 0% 60%, #ffffff 0% 100%)}
+    82%{background : conic-gradient(#E09D26 0% 65%, #ffffff 0% 100%)}
+    88%{background : conic-gradient(#E09D26 0% 70%, #ffffff 0% 100%)}
+    94%{background : conic-gradient(#E09D26 0% 75%, #ffffff 0% 100%)}
+    100%{background : conic-gradient(#E09D26 0% 80%, #ffffff 80% 80%)}}
+@keyframes pie3{
+    0%{background : conic-gradient(#1170B3 0% 0%, #ffffff 0% 100%)}
+    6%{background : conic-gradient(#1170B3 0% 3.5%, #ffffff 0% 100%)}
+    12%{background : conic-gradient(#1170B3 0% 7%, #ffffff 0% 100%)}
+    18%{background : conic-gradient(#1170B3 0% 10.5%, #ffffff 0% 100%)}
+    25%{background : conic-gradient(#1170B3 0% 14%, #ffffff 0% 100%)}
+    33%{background : conic-gradient(#1170B3 0% 17.5%, #ffffff 0% 100%)}
+    38%{background : conic-gradient(#1170B3 0% 21%, #ffffff 0% 100%)}
+    44%{background : conic-gradient(#1170B3 0% 24.5%, #ffffff 0% 100%)}
+    50%{background : conic-gradient(#1170B3 0% 28%, #ffffff 0% 100%)}
+    56%{background : conic-gradient(#1170B3 0% 31.5%, #ffffff 0% 100%)}
+    62%{background : conic-gradient(#1170B3 0% 35%, #ffffff 0% 100%)}
+    68%{background : conic-gradient(#1170B3 0% 38.5%, #ffffff 0% 100%)}
+    75%{background : conic-gradient(#1170B3 0% 42, #ffffff 0% 100%)}
+    82%{background : conic-gradient(#1170B3 0% 45.5%, #ffffff 0% 100%)}
+    88%{background : conic-gradient(#1170B3 0% 49%, #ffffff 0% 100%)}
+    94%{background : conic-gradient(#1170B3 0% 55%, #ffffff 0% 100%)}
+    100%{background : conic-gradient(#1170B3 0% 60%, #ffffff 60% 60%)}}
+@keyframes pie4{
+    0%{background : conic-gradient(#29A4DD 0% 0%, #ffffff 0% 100%)}
+    6%{background : conic-gradient(#29A4DD 0% 4%, #ffffff 0% 100%)}
+    12%{background : conic-gradient(#29A4DD 0% 8%, #ffffff 0% 100%)}
+    18%{background : conic-gradient(#29A4DD 0% 12%, #ffffff 0% 100%)}
+    25%{background : conic-gradient(#29A4DD 0% 16%, #ffffff 0% 100%)}
+    33%{background : conic-gradient(#29A4DD 0% 20%, #ffffff 0% 100%)}
+    38%{background : conic-gradient(#29A4DD 0% 26%, #ffffff 0% 100%)}
+    44%{background : conic-gradient(#29A4DD 0% 30%, #ffffff 0% 100%)}
+    50%{background : conic-gradient(#29A4DD 0% 36%, #ffffff 0% 100%)}
+    56%{background : conic-gradient(#29A4DD 0% 42%, #ffffff 0% 100%)}
+    62%{background : conic-gradient(#29A4DD 0% 46%, #ffffff 0% 100%)}
+    68%{background : conic-gradient(#29A4DD 0% 50%, #ffffff 0% 100%)}
+    75%{background : conic-gradient(#29A4DD 0% 56%, #ffffff 0% 100%)}
+    82%{background : conic-gradient(#29A4DD 0% 60%, #ffffff 0% 100%)}
+    88%{background : conic-gradient(#29A4DD 0% 64%, #ffffff 0% 100%)}
+    94%{background : conic-gradient(#29A4DD 0% 68%, #ffffff 0% 100%)}
+    100%{background : conic-gradient(#29A4DD 0% 70%, #ffffff 70% 70%)}}
+@keyframes pie5{
+    0%{background : conic-gradient(#F39320 0% 0%, #ffffff 0% 100%)}
+    6%{background : conic-gradient(#F39320 0% 4%, #ffffff 0% 100%)}
+    12%{background : conic-gradient(#F39320 0% 8%, #ffffff 0% 100%)}
+    18%{background : conic-gradient(#F39320 0% 12%, #ffffff 0% 100%)}
+    25%{background : conic-gradient(#F39320 0% 16%, #ffffff 0% 100%)}
+    33%{background : conic-gradient(#F39320 0% 20%, #ffffff 0% 100%)}
+    38%{background : conic-gradient(#F39320 0% 26%, #ffffff 0% 100%)}
+    44%{background : conic-gradient(#F39320 0% 30%, #ffffff 0% 100%)}
+    50%{background : conic-gradient(#F39320 0% 36%, #ffffff 0% 100%)}
+    56%{background : conic-gradient(#F39320 0% 42%, #ffffff 0% 100%)}
+    62%{background : conic-gradient(#F39320 0% 46%, #ffffff 0% 100%)}
+    68%{background : conic-gradient(#F39320 0% 50%, #ffffff 0% 100%)}
+    75%{background : conic-gradient(#F39320 0% 56%, #ffffff 0% 100%)}
+    82%{background : conic-gradient(#F39320 0% 60%, #ffffff 0% 100%)}
+    88%{background : conic-gradient(#F39320 0% 64%, #ffffff 0% 100%)}
+    94%{background : conic-gradient(#F39320 0% 68%, #ffffff 0% 100%)}
+    100%{background : conic-gradient(#F39320 0% 70%, #ffffff 70% 70%)}}
+@keyframes pie6{
+    0%{background : conic-gradient(#323333 0% 0%, #ffffff 0% 100%)}
+    6%{background : conic-gradient(#323333 0% 4%, #ffffff 0% 100%)}
+    12%{background : conic-gradient(#323333 0% 8%, #ffffff 0% 100%)}
+    18%{background : conic-gradient(#323333 0% 12%, #ffffff 0% 100%)}
+    25%{background : conic-gradient(#323333 0% 16%, #ffffff 0% 100%)}
+    33%{background : conic-gradient(#323333 0% 20%, #ffffff 0% 100%)}
+    38%{background : conic-gradient(#323333 0% 26%, #ffffff 0% 100%)}
+    44%{background : conic-gradient(#323333 0% 30%, #ffffff 0% 100%)}
+    50%{background : conic-gradient(#323333 0% 36%, #ffffff 0% 100%)}
+    56%{background : conic-gradient(#323333 0% 42%, #ffffff 0% 100%)}
+    62%{background : conic-gradient(#323333 0% 46%, #ffffff 0% 100%)}
+    68%{background : conic-gradient(#323333 0% 50%, #ffffff 0% 100%)}
+    75%{background : conic-gradient(#323333 0% 56%, #ffffff 0% 100%)}
+    82%{background : conic-gradient(#323333 0% 60%, #ffffff 0% 100%)}
+    88%{background : conic-gradient(#323333 0% 64%, #ffffff 0% 100%)}
+    94%{background : conic-gradient(#323333 0% 68%, #ffffff 0% 100%)}
+    100%{background : conic-gradient(#323333 0% 70%, #ffffff 70% 70%)}}
 span.center{
     border: 1px solid #222;
     background: #fff;
@@ -391,7 +506,7 @@ span.center{
 .main2 {
     width: auto;
     height: auto;
-    transition: all 1.5s;}
+    transition: all 0.5s;}
 .area3{
     width: auto;
     height: auto;
@@ -406,7 +521,7 @@ span.center{
     bottom: 20px;
     font-size: 16px;
     display: block;
-    transition: all 2.3s;
+    transition: all 0.5s;
     opacity: 0;}
 .area3 .area3Box2{
     width: auto;
@@ -446,7 +561,7 @@ span.center{
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: all 1.5s;}
+    transition: all 0.5s;}
 .aboutBox .myImg{
     transform: translateY(155px);
     margin: 40px auto;

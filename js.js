@@ -182,25 +182,6 @@ $(document).ready(function(){
             $('.main1').width(bht)
             }
         if(sc>2900 && sc<3700){
-            draw(80, '.html', '#DE5026');
-            draw(80, '.css', '#E09D26');
-            draw(60, '.js','#1170B3');
-            draw(70, '.ps', '#29A4DD');
-            draw(70, '.ai', '#F39320');
-            draw(70, '.fg', '#323333');
-            function draw(max, classname, colorname){
-            let i=1;
-            let func1 = setInterval(function(){
-            if(i<max){
-                color1(i,classname,colorname);
-                i++;} 
-            else{clearInterval(func1);}},10);
-            }
-            function color1(i, classname,colorname){
-            $(classname).css({
-            "background":"conic-gradient("+colorname+" 0% "+i+"%, #fff "+i+"% 100%)"
-            });
-            }
             $('.skillBox').css({'display':'block'})
             $('.area2').width(main2wd)
             $('.area2 .licen').fadeIn(500)
