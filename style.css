@@ -1,0 +1,537 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine&display=swap');
+*{margin: 0; padding: 0;}
+ul,ol{list-style: none;}
+a{text-decoration: none; color: #fff;}
+img{vertical-align: bottom; border: none;}
+
+:root {
+    /*color*/
+    --txtC:#222;
+    --bg-col:#593a1e;
+    --p-col:#e6927f;
+    --fon-col:#fff;
+    --black-f:#333;
+    /*fontSize*/
+    --titleT:50px;
+    --menuT:20px;
+    --txtT:16px;
+    --smT:12px;
+    /* box shadow */
+    /*box백그라운드 설정*/ 
+    --bg :linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+    linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+    linear-gradient(#ddd 0px, #ddd 1px, transparent 1px, transparent 99px,  transparent 100px),
+    linear-gradient(90deg, #ddd 0px, #ddd 1px, transparent 1px, transparent 99px,  transparent 100px),
+    linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+    linear-gradient(90deg, #ddd 0px, #ddd 1px, transparent 1px, transparent 99px, #ddd 99px, #ddd 100px),
+    linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+    linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+    linear-gradient(#cdcccc, #cdcccc);}
+    /* font-family: 'Cinzel', serif;
+    font-family: 'Tangerine', cursive; */
+/* 폰트설정 */
+h3{ font-family: 'Rubik 80s Fade', cursive;}
+.myText .in{ font-family: 'Tangerine', cursive;}
+.nameTitle {font-family: 'Cinzel', serif}
+    /* 메뉴설정 */
+header{
+    width: 100%;
+    height: 30px;
+    position:fixed;
+    display: flex;
+    z-index: 9999;}
+header h2 {
+    margin-left: 160px;
+    width: 20%;}
+header .nav {
+    width: 100%;
+    display: flex;
+    justify-content:end;
+    margin-right: 50px;}
+header .menu {
+    margin-right: -40px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    text-align: center;}
+header .menu li {
+    width: 25%;}
+header .menu li a {
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    transition: all 0.5s;}
+/* 메뉴 호버설정 */
+.menu li a:hover{text-shadow:2px 2px 5px #000;}
+.menu li a.on{text-shadow:2px 2px 5px #000;}
+
+/*박스 설정-------------------------------------------------------------*/
+.wrap{
+    z-index: 10;
+    width: 100%;
+    height:6000px;
+    perspective:2000px;
+    color: var(--txtC);
+    position: relative;}
+.box{
+    top: -200px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #222;
+    box-sizing: border-box;
+    transform: translateZ(-200px);
+    transition: all 0.5s;
+    background-color: #f6f6f6;
+    background-image:var(--bg);
+    box-shadow: 0 -5px 30px 5px rgb(51, 51, 51);
+    background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;}
+
+
+    /* 추가사항 */
+.etc{
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #f6f6f6;
+    background-image:
+        linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+        linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+        linear-gradient(#ddd 0px, #ddd 1px, transparent 1px, transparent 99px,  transparent 100px),
+        linear-gradient(90deg, #ddd 0px, #ddd 1px, transparent 1px, transparent 99px,  transparent 100px),
+        linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(90deg, #ddd 0px, #ddd 1px, transparent 1px, transparent 99px, #ddd 99px, #ddd 100px),
+        linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc, #cdcccc);
+    background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+    display: none;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #222;
+    box-sizing: border-box;
+    transform: translateZ(0px);
+    transition: all 0.5s;}
+/* .box::before{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(img/qq.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.2;} */
+.box::before.on {transform: rotateY(180deg)}
+    /* .box:hover:before {transform: rotateY(180deg)} */
+.www{
+    margin: 0 auto;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 99;
+    height: 30px;
+    width: 100%;
+    border-bottom: solid 1px #222;
+    background-color:rgba(255, 255, 255,0);
+    transition:all 0.3s;}
+.www>span{
+    line-height: 2;
+    box-sizing: border-box;
+    margin-left: 40px;
+    font-size: 16px;
+    font-weight: normal;}
+.www .pot{
+    display: none;
+    right: 20px;
+    position: absolute;
+}
+.main1 {
+    border-right: 1px solid #222;
+    box-sizing: border-box;
+    transition: all 2s ease-in-out;}
+.area1{
+    width: auto;
+    height:auto;
+    border-bottom: 1px solid #222;
+    position: relative;
+    transition: all 1s ease-in-out;}
+.mainTxt{
+    width: auto;
+    height: auto;
+    opacity: 0;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:50px;
+    left: 50px;
+    transition: all 0.5s;}
+.mainTxt.on{
+    opacity: 1;
+    color:#222;}
+.mainTxt .works{
+    width: 400px;
+    height: auto;
+    position:absolute;
+    opacity: 0;
+    transition: all 0.5s;}
+.works.on{opacity: 1;}
+.mainTxt h2{
+    font-size: 5em;}
+.mainTxt p {
+    font-size: 2em;
+    margin-left: 20px;}
+.area2{
+    height: auto;
+    width: auto;
+    display: flex;
+    position: relative;
+    transition: all 1.5s linear;}
+.area2 .mokupLine{
+    position: relative;
+    width: 0;
+    height: auto;
+    border-right: 1px solid #222;
+    display: flex;
+    transition: all 2.5s;}
+.area2 .mokupImg{
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 500px;
+    margin: 0px auto;
+    transform: translateY(50px);
+    transition: all 0.5s;}
+.mokupImg.on{opacity: 1;}
+.area2 .mokupImg:nth-child(1){background-image: url(img/11.png);}
+.area2 .mokupImg:nth-child(2){background-image: url(img/main3-1d.jpg);}
+.area2 .mokupImg:nth-child(3){background-image: url(img/lp_cover1.png);}
+
+.area2 .mokupBox{
+    width: auto;
+    height: auto;
+    position: relative;}
+.area2 .mokupTxt{
+    opacity: 0;
+    z-index: 1;
+    left: 20px;
+    position: absolute;
+    transform: translateY(350px);
+    width: 80%;
+    height: 100px;
+    transition: all 0.2s;}
+.mokupTxt.on{
+    z-index: 3;
+    opacity: 1;}
+.mokupTxt li {
+    margin-top:15px;
+    list-style:disc;
+    margin-left: 0px;}
+.mokupTxt li a{
+    position: relative;
+    display: block;
+    font-size: 18px;
+    color: #222;
+    padding: 0.34rem 0;}
+.mokupTxt li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transform-origin: right;
+    transform: scaleX(0);
+    background: #222;
+    transition: transform 300ms ease;
+    z-index: 1;}
+
+.mokupTxt li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);}
+.mokupTxt li a:hover span {transform:rotate(-45deg);}
+.mokupTxt li a:hover span::before {
+    transform: rotate(-45deg);}
+.mokupTxt li a span::before, .mokupTxt li a span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    background: #222;
+    transition: transform 200ms cubic-bezier(0.3, 1.5, 0.5, 1);
+    transition-delay: 240ms;
+    z-index: 2;}
+.mokupTxt li a span::before {
+    width: 1px;
+    height: 6px;
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg);}
+.mokupTxt li a span::after {
+    height: 1px;
+    width: 20px;
+    transform-origin: 100% 0%;
+    transform: translateX(-1px) rotate(0deg);}
+.mokupTxt li a:hover span{text-shadow:2px 2px 5px #000;}
+.mokupTxt li a:hover{border-bottom: none;}
+/* 스킬영역 자격증 설정 */
+.area2 .licen{
+    display: none;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    transition: all 0.2s;}
+.licen h3{
+    margin-top: 10px;
+    margin-left: 80px;
+    margin-bottom: 0px;
+    font-size: 3rem;}
+.licen h3::first-letter{
+    color: #e6927f;
+    font-size: 3.4rem;}
+.area2 .licen .dot{
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 60%;
+    height: auto;
+    left: 15%;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding:50px 20px 50px 10px;
+    list-style: circle;
+    position: absolute;
+    background-color: #edf0f1;
+    margin-top: 10px;
+    -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.50), 0 15px 12px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.50), 0 15px 12px rgba(0, 0, 0, 0.42);
+    -ms-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.50), 0 15px 12px rgba(0, 0, 0, 0.42);
+    -o-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.50), 0 15px 12px rgba(0, 0, 0, 0.42);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.50), 0 15px 12px rgba(0, 0, 0, 0.42);
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+    -ms-transition: box-shadow 0.25s ease-in-out;
+    -o-transition: box-shadow 0.25s ease-in-out;
+    transition: box-shadow 0.25s ease-in-out;;
+    }
+.area2 .licen .dot:hover {
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);}
+.area2 .dot li {
+    border-bottom: dotted 1px rgb(104, 104, 104);
+    margin-top: 5px;
+    font-size: 0.8rem;
+    margin-left: 30px;
+    padding-bottom: 2px;}
+.area2 .dot li em{
+    color: #222;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;}
+/* 스킬영역 스킬차트 설정 */
+.skillBox{
+    display: none;
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    transition: all 0.5s;}
+.skillBox h3{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 3rem;}
+.skillBox::first-letter{
+    color: #e6927f;
+    font-size: 3.4rem;}
+.skill-chart{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;}
+.chart {
+    list-style: none;
+    border: 1px solid #222;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 10px;
+    transition: 0.5s;}
+span.center{
+    border: 1px solid #222;
+    background: #fff;
+    display : block;
+    position: absolute;
+    top:50%; left:50%;
+    width:50px; height:50px;
+    border-radius: 50%;
+    text-align:center; 
+    line-height: 50px;
+    font-size:20px;
+    transform: translate(-50%, -50%);}
+.skill-txt{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    }
+.skill-txt li{
+    width: 100px;
+    font-weight: bold;
+    margin-left: 15px;
+    text-align: center;}
+.main2 {
+    width: auto;
+    height: auto;
+    transition: all 1.5s;}
+.area3{
+    width: auto;
+    height: auto;
+    border-bottom: 1px solid #593a1e;}
+.area3 .area3Box1{
+    position: relative;
+    width: auto;
+    border-bottom:1px solid #222;}
+.area3Box1>p{
+    position: absolute;
+    left: 25px;
+    bottom: 20px;
+    font-size: 16px;
+    display: block;
+    transition: all 2.3s;
+    opacity: 0;}
+.area3 .area3Box2{
+    width: auto;
+    height: auto;}
+.area3 .area3Box2 .h2Box{
+    height: 30px;
+    position: relative;
+    border-bottom: 1px solid #222;}
+.h2Box h2{
+    position:absolute;
+    opacity: 0;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 2;
+    margin-left:10px;
+    transition: all 0.5s;}
+.h2Box h2.on{opacity: 1;}
+.area3Txtbox{position: relative;}
+.area3Box2 .area3Txt{
+    position:absolute;
+    font-size: 18px;
+    margin-left: 16px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 0.5s;}
+.area3Box2 .area3Txt.on{
+    opacity: 1;}
+.area4{
+    width: 100%;
+    height: auto;
+    display: flex;}
+.area4Box1{}
+.area4Box2{}
+/* about 설정 */
+.aboutBox{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s;}
+.aboutBox .myImg{
+    transform: translateY(155px);
+    margin: 40px auto;
+    width: 70%;
+    height: 30vh;
+    border: 1.5px solid #222;}
+.aboutBox .myText{
+    margin: 170px auto 0 auto;
+    width: 70%;
+    height: 30vh;} 
+.myText h4{
+    font-size: 18px;}
+.myText h4 span{
+    font-size: 16px;
+    font-weight: normal;}
+.myText .year{
+    font-size: 16px;}
+.myText .mail{
+    font-size: 16px;}
+.myText .in{
+    position: absolute;
+    font-weight: bold;
+    left: 5px;
+    bottom: 0px;
+    font-size: 4rem;}
+.in::first-letter{
+    color: #e6927f;
+    font-size: 5rem;}
+.nameTitle{
+    font-weight: normal;
+    display: none;
+    top: 180px;
+    left: 30px;
+    position: absolute;}
+.nameTitle h2{
+    line-height: 0.8;}
+.nameTitle h2:nth-child(1){
+    font-size: 5rem;
+    letter-spacing: 1.2;}
+.nameTitle h2:nth-child(2){
+    font-size: 7.6rem;
+    letter-spacing: -3px;}
+.aboutED{
+    display: none;
+    margin-top:20px;
+    margin-left: 20px;}
+.aboutED h4{
+    font-size: 1.4rem;
+    margin-bottom: 10px;}
+.aboutED p{
+    margin-bottom: 10px;
+    font-weight: bold;}
+.aboutED p span {
+    font-weight: normal;
+    }
+/* 명함 설정 */
+.cardTxt{
+    z-index: 99;
+    display: none;
+    position: absolute;
+    left: 80px;
+    top:100px;
+    font-size: 5rem;}
+.cardTxt2{
+    z-index: 99;
+    display: none;
+    position: absolute;
+    right: 100px;
+    bottom:100px;
+    font-size: 2rem;
+    font-weight: normal;}
+.cardTxt3{
+    display: none;
+    z-index: 99;
+    position: absolute;
+    left: 150px;
+    top:200px;
+    font-size: 2rem;
+    font-weight: normal;}
+.cardTxt3 li{
+    margin-top: 5px;}
+.cardTxt3 li:first-letter{
+    font-size: 2.1rem;
+    display: block;
+    padding-right: 50px;
+    box-sizing: border-box;}
+.cardTxt3 li:nth-child(2):first-letter{
+    padding-right: 44px;}

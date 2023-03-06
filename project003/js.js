@@ -1,13 +1,41 @@
+// 022666
 $(document).ready(function(){  		
 	let wd=$(window).width();
 	let ht = $(window).height()
 	let sNo = $('section').size();
+
 	console.log(wd)
 	$('section').width(wd);
 	$('body').width(wd*5);
 	$('body').height(wd*sNo)
 	$('#wrap').height(ht)
 	$('#wrap').width(wd*sNo)
+	
+	//화면이 리사이징 될떄
+	$(window).resize(function(){
+		let wd=$(window).width();
+		let ht = $(window).height()
+		let sNo = $('section').size();
+		console.log(wd)
+	$('section').width(wd);
+	$('body').width(wd*5);
+	$('body').height(wd*5)
+	$('#wrap').height(ht)
+	$('#wrap').width(wd*sNo);
+	//메뉴 클릭 시 섹션 이동 설정
+	$('header li').click(function(){
+		let wd = $(window).width();
+		let i= $(this).index()
+		console.log(i)
+		$('#wrap').css({'left':-wd*i})
+		});
+	// 메뉴 호버 고정 설정
+	$('header li').click(function(){
+		let i= $(this).index()
+		$('header li a').removeClass('on')
+		$('header li a').eq(i).addClass('on')
+	});
+	})
 	//헤더설정
 	//메뉴 클릭 시 섹션 이동 설정
 	$('header li').click(function(){
@@ -27,13 +55,15 @@ $(document).ready(function(){
 	// musicBox 나타나기
 	$('.angle .left').click(function(){
 		$('.musicBox').css({'opacity':1})
-		$('.musicBox').css({'right':0})
+		$('.musicBox').css({'right':20})
+		
 		$('.angle .left').removeClass('active')
 		$('.angle .right').addClass('active')
 	});
 	$('.angle .right').click(function(){
 		$('.musicBox').css({'opacity':0})
-		$('.musicBox').css({'right':'-500px'})
+		$('.musicBox').css({'right':'-1300px'})
+		
 		$('.angle .right').removeClass('active')
 		$('.angle .left').addClass('active')
 		//$(this).css({'display':'none'})
@@ -69,12 +99,27 @@ $(document).ready(function(){
 	//섹션2 앨범 리스트목록 나타나기
 	$('.horBox').mouseenter(function(){
 		$(this).find('.dot').css({'background-color':'#e6927f'})
-		$('.albumList').find('ul').css({'opacity':1})
 	});
 	$('.horBox').mouseleave(function(){
 		$('.dot').css({'background-color':'#fff'})
 	});
-	
+
+	$('.horBox:nth-child(1)').mouseenter(function(){
+		$('.albumList ul').css({'opacity':0})
+		$('.albumList ul:nth-child(1)').css({'opacity':1})});
+	$('.horBox:nth-child(2)').mouseenter(function(){
+		$('.albumList ul').css({'opacity':0})
+		$('.albumList ul:nth-child(2)').css({'opacity':1})});
+	$('.horBox:nth-child(4)').mouseenter(function(){
+		$('.albumList ul').css({'opacity':0})
+		$('.albumList ul:nth-child(3)').css({'opacity':1})});
+	$('.horBox:nth-child(6)').mouseenter(function(){
+		$('.albumList ul').css({'opacity':0})
+		$('.albumList ul:nth-child(4)').css({'opacity':1})});
+	$('.horBox:nth-child(7)').mouseenter(function(){
+		$('.albumList ul').css({'opacity':0})
+		$('.albumList ul:nth-child(5)').css({'opacity':1})});
+		
 
     // BestMusic 섹션3 설정
 	// 마우스 오버시
@@ -104,8 +149,14 @@ $(document).ready(function(){
 		$(this).find("h3").stop().animate({"right":"-450px"},200);
 		$(this).find("p").stop().animate({"right":"-450px"},500);	
 	});
+	// 섹션 4설정
+	// whill_card 클릭시 가사텍스트 변경
+	$('.wheel>div').click(function(){
+		let aaa = $(this).index()
+		console.log(aaa)
+		$('.txt_box>div').css({'opacity':0})
+		$('.txt_box>div').eq(aaa+1).css({'opacity':1})
+
+	})
 
 });
-
-
-    

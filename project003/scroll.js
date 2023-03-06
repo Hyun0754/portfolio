@@ -45,7 +45,6 @@ cards.forEach((card) => {
     if (lastClickedCard) {
       putBack(e);
     }
-    flip(e);
   });
 });
 function putBack(e) {
@@ -58,15 +57,4 @@ function putBack(e) {
     absolute: true
   });
   lastClickedCard = null;
-}
-function flip(e) {
-  let image = e.target.querySelector("img");
-  let state = Flip.getState(image);
-  header.appendChild(image);
-  Flip.from(state, {
-    duration: 0.6,
-    ease: "sine.out",
-    absolute: true
-  });
-  lastClickedCard = e.target;
 }

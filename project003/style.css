@@ -167,7 +167,9 @@ right: 30px;}}
     z-index: 1;
     opacity: 0;
     position: absolute;
-    background-color: var(--p-col);
+    background: #EDE9D0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #E6927F, #EDE9D0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #E6927F, #EDE9D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     right: -400px;
     width: 20%;
     top: 50%;
@@ -213,7 +215,7 @@ right: 30px;}}
     background-position: center center;
     background-size: cover;}
 .album-img li:nth-child(1){
-    background-image: url(img/album1_500.jpg);
+    background-image: url(img/album12_500.jpg);
     z-index: 1;}
 .album-img li:nth-child(2){
     background-image: url(img/album3_500.jpg);}
@@ -309,13 +311,13 @@ right: 30px;}}
     margin: 0 auto;
     margin-top: 50px;}
 .image {
-    background: url(/img/r4.jpg );
+    background: url(img/r4.jpg);
     background-size: cover;  
     position: absolute;
-    z-index: 1;
+    z-index: 10;
     opacity: 0.5;
     height: 350px;
-    width: 300px;}
+    width: 100%;}
 .image:after {
     height: 150px;
     content: '';
@@ -544,12 +546,13 @@ right: 30px;}}
 .albumList ul {
     opacity: 0;
     width: 400px;
-    height: 550px;
+    height: 600px;
     position: absolute;
     right: -0px;
     top: 50%;
     margin-top: -300px;
     box-shadow: -4px 0px 10px -3px #222222;
+    transition: all 0.5s;
     background: linear-gradient(
         to right,
         rgba(57,40,22,0) 0%,
@@ -557,6 +560,12 @@ right: 30px;}}
         rgba(57,40,22,0.8) 50%,
         rgba(57,40,22,1) 75%,
         rgba(57,40,22,1) 100%);}
+.albumList ul .on{opacity: 1;}
+.albumList ul li:nth-child(1){
+    font-size: 40px;
+    color: var(--p-col);
+    border-left: none;
+    margin-top: 20px;}
 .albumList ul li{
     font-size: 26px;
     margin-top: 30px;
@@ -567,7 +576,6 @@ right: 30px;}}
 
 .albumList ul:nth-child(1){opacity: 1;}
 .albumList ul:nth-child(1) li:nth-child(1){
-    background-color: #9b848a;
     font-size: 50px;
     margin-top: 0;
     margin-left: 0;
@@ -762,7 +770,7 @@ right: 30px;}}
     padding-right: 20px;
     top: 0%;
     width: 100%;
-    background-color: #212121;
+    background:#2c2c2c;
     text-align: right;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -776,13 +784,14 @@ right: 30px;}}
     left: 0px;
     border-style: solid;
     border-width: 0 550px 80px 0;
-    border-color: transparent #212121 transparent transparent;}
+    border-color: transparent #2c2c2c transparent transparent;}
+/*sns 아이콘 설정*/
 .musicImg_box .sns {
     z-index: 1;
     position: absolute;
     width: 100%;
     bottom: 0%;
-    background-color: #141414;
+    background-color: #2c2c2c;
     -webkit-transform: translateY(200%);
     transform: translateY(200%);}
 .musicImg_box .sns:before {
@@ -791,11 +800,12 @@ right: 30px;}}
     bottom: 100%;
     left: 0;
     border-style: solid;
-    border-width: 80px 0 0 550px;
-    border-color: transparent transparent transparent #141414;
+    border-width: 60px 0 0 550px;
+    border-color: transparent transparent transparent #2c2c2c;
     z-index: 1;}
 .sns .icons {
-    margin-top: 30px;}
+    margin-top: 20px;
+    margin-left: 20px;}
 .sns .icons i {
     margin-bottom: 20px;
     padding: 10px 10px;
@@ -821,17 +831,23 @@ right: 30px;}}
     -webkit-transform: translateY(0%);
     transform: translateY(0%);}
 /*오른쪽 가사 설정*/
+.txt_Box{}
 .musicTxt_box{
     width: 50%;
     height: 100%;
-    background-color: #2e2e31;
+    background-color: #2c2c2c;
     position:absolute;
-    right: 0;}
+    right: 0;
+    opacity: 0;
+    transition: all 0.8s;}
+.musicTxt_box:nth-child(1){opacity: 1;}
 .musicTxt_box .title{
-    font-size: var(--titleT);
+    font-size: 32px;
+    font-weight: bold;
     color: var(--p-col);
-    margin-left: 30px;
-    margin-top: 10px;}
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;}
 .musicTxt_box p{
     font-size: var(--txtT);
     margin-left: 60px;}
@@ -861,6 +877,7 @@ right: 30px;}}
     width: 6%;
     max-width: 200px;
     cursor: pointer;}
+.wheel__card:hover{border: 1px solid #fff;}
 img {
     width: 100%;
     pointer-events: none;
