@@ -1,4 +1,4 @@
-// 0306
+// 03006
 $(document).ready(function(){  		
 	let wd=$(window).width();
 	let ht = $(window).height()

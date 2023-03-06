@@ -1,4 +1,4 @@
-// 0306
+// 03006
 console.clear();
 gsap.registerPlugin("ScrollTrigger");
 let wheel = document.querySelector(".wheel");
