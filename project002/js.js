@@ -11,7 +11,6 @@ $(document).ready(function(){
         $('.box').height(ht)
         $('.main4>article').width(wd)
         let mht = $('.main4').height(ht)
-        //0306
         
     $(window).scroll(function(){
         let sc= $(window).scrollTop();
@@ -47,40 +46,3 @@ $(document).ready(function(){
         //////////////////////////////////////////////////////
 });
 
-// gsap.registerPlugin(ScrollTrigger);
-// let pageContainer = document.querySelector('.wrap');
-// /* SMOOTH SCROLL */
-// let scroller = new LocomotiveScroll({
-//   el: pageContainer,
-//   smooth: true});
-// scroller.on("scroll", ScrollTrigger.update);
-// ScrollTrigger.scrollerProxy(pageContainer, {
-//   scrollTop(value) {
-//     return arguments.length
-//       ? scroller.scrollTo(value, 0, 0)
-//       : scroller.scroll.instance.scroll.y;
-//   },
-// });
-// ////////////////////////////////////
-// ////////////////////////////////////
-// window.addEventListener("load", function () {
-//   let pinWrap = document.querySelector(".container");
-//   let pinWrapWidth = pinWrap.offsetWidth;
-//   let hoz = pinWrapWidth - window.innerWidth;
-
-//   // Pinning and horizontal scrolling
-
-//   gsap.to(".container", {
-//     scrollTrigger: {
-//       scroller: pageContainer, //locomotive-scroll
-//       scrub: true,
-//       trigger: ".main4",
-//       pin: true,
-//       // anticipatePin: 1,
-//       start: "top top",
-//       end: pinWrapWidth
-//     },
-//     x: -hoz,
-//     ease: "none"
-//   });
-// });

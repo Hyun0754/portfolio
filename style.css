@@ -208,12 +208,13 @@ header .menu li a {
     width: 80%;
     height: 500px;
     margin: 0px auto;
+    margin-left: 50px;
     transform: translateY(50px);
     transition: all 0.5s;}
 .mokupImg.on{opacity: 1;}
-.area2 .mokupImg:nth-child(1){background-image: url(img/11.png);}
-.area2 .mokupImg:nth-child(2){background-image: url(img/main3-1d.jpg);}
-.area2 .mokupImg:nth-child(3){background-image: url(img/lp_cover1.png);}
+.area2 .mokupImg:nth-child(1){background-image: url(img/pro001.png);}
+.area2 .mokupImg:nth-child(2){background-image: url(img/pro002.png);}
+.area2 .mokupImg:nth-child(3){background-image: url(img/pro003.png);}
 .area2 .mokupBox{
     width: auto;
     height: auto;
@@ -519,7 +520,7 @@ span.center{
     position: absolute;
     left: 25px;
     bottom: 20px;
-    font-size: 16px;
+    font-size: 20px;
     display: block;
     transition: all 0.5s;
     opacity: 0;}
@@ -624,7 +625,8 @@ span.center{
     position: absolute;
     left: 80px;
     top:100px;
-    font-size: 5rem;}
+    font-size: 3rem;
+    letter-spacing: -1.2;}
 .cardTxt2{
     z-index: 99;
     display: none;

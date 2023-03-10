@@ -243,7 +243,7 @@ $(document).ready(function(){
                 $(this).css({'border': '1px solid #222'})
                 $('.www').css({'display': 'block'})  
                 $('.cardTxt').show()
-                $('.cardTxt2').text('~~~~한 전병현입니다.')
+                $('.cardTxt2').text('-전병현-')
                 $('.cardTxt3').hide()
             })
         }else{

@@ -29,7 +29,8 @@ img{vertical-align: bottom; border: none;}
     --yellow: #ffce14;}
 /*: 'Lora', serif;
 : 'Archivo', sans-serif;*/
-body{color: #fff;}
+body{color: #fff;
+overflow-x: hidden;}
 #wrap{
     width: 500%;
     height: 100%;
